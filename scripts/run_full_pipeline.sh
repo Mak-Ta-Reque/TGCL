@@ -205,7 +205,7 @@ if [[ -s "$OBJECTS_CSV" && -s "$CONCEPT_MAP_JSON" ]]; then
 else
   if [[ -s "$OBJECTS_CSV" && ! -s "$CONCEPT_MAP_JSON" ]]; then
     run_step "Build Concept Map (resume)" \
-      "\"$PYTHON_BIN\" -u \"$ROOT_DIR/concept_image_mapping.py\" --input \"$OBJECTS_CSV\" --output \"$CONCEPT_MAP_JSON\""
+      "\"$PYTHON_BIN\" -u \"$ROOT_DIR/preprocessing/concept_image_mapping.py\" --input \"$OBJECTS_CSV\" --output \"$CONCEPT_MAP_JSON\""
   else
     run_step "Dataset Inference" \
       "HF_HOME=\"$HF_HOME\" INPUT_DIR=\"$INPUT_DIR\" OUTPUT_DIR=\"$OUTPUT_DIR\" VLM_MODEL=\"$VLM_MODEL\" BATCH_SIZE=\"$BATCH_SIZE\" PROMPT=\"$PROMPT\" IMAGE_SIZE=\"$IMAGE_SIZE\" IMAGE_BUDGET=\"$IMAGE_BUDGET\" bash \"$SCRIPTS_DIR/run_dataset_inference.sh\""

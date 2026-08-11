@@ -169,7 +169,7 @@ else
       --trust_remote_code"
 
   run_step "Build Concept Map" \
-    "python -u \"$ROOT_DIR/concept_image_mapping.py\" --input \"$OBJECTS_CSV\" --output \"$CONCEPT_MAP_JSON\""
+    "python -u \"$ROOT_DIR/preprocessing/concept_image_mapping.py\" --input \"$OBJECTS_CSV\" --output \"$CONCEPT_MAP_JSON\""
 fi
 
 # -------------------------------

@@ -604,7 +604,8 @@ def step_1_dataset_inference(config: PipelineConfig, logger: logging.Logger):
     # Build concept map
     if not concept_map_exists:
         logger.info("START: Build Concept Map")
-        
+
+        sys.path.insert(0, str(ROOT_DIR / "preprocessing"))
         from concept_image_mapping import main as concept_mapping_main
         
         mapping_args = [

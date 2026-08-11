@@ -63,7 +63,7 @@ This type of explanation is crucial for **debugging model behavior**, **understa
 1. **Clone the repository**
    ```bash
    git clone <repo_url>
-   cd xl-vlms
+   cd xl-vlms-rsml
    ```
 
 2. **Set up Python environment**
@@ -84,11 +84,11 @@ This type of explanation is crucial for **debugging model behavior**, **understa
      pip install torch==2.6.0 torchvision==0.21.0 torchaudio==2.6.0 --index-url https://download.pytorch.org/whl/cu124 # for CUDA 12.5 please use your device configuration
      pip install tqdm git+https://github.com/bckim92/language-evaluation.git psutil spacy timm accelerate
      python -m spacy download en_core_web_sm
-     
+
      # For BERTScore and CLIPScore evaluation:
      pip install bert-score
      pip install git+https://github.com/openai/CLIP.git
-     
+
      # For Qwen model support:
      pip install qwen-vl-utils
      conda install -c conda-forge inflect
@@ -99,255 +99,35 @@ This type of explanation is crucial for **debugging model behavior**, **understa
      python -c "import language_evaluation; language_evaluation.download('coco')"
 
      pip install -U git+https://github.com/luca-medeiros/lang-segment-anything.git
-     pip install pycocotools  
+     pip install pycocotools
      pip install matplotlib
      pip install streamlit
      ```
 
-## ⚙️ Configuration
+## 🚀 Getting Started
 
-### Environment Setup with `.env`
+**[`docs/cgdl_quickstart.md`](docs/cgdl_quickstart.md) is the canonical guide** —
+start there. It covers configuring `.env`, building the dataset, running the
+pipeline with the `cgdl` contrastive prompt template, and evaluating a run
+(faithfulness insertion/deletion AUC, grounding BERTScore/CLIPScore, and
+concept-identity object-classification F1).
 
-The pipeline uses a `.env` file for easy configuration management. This keeps your custom paths separate from the code.
-
-1. **Copy the example configuration**
-   ```bash
-   cp .env.example .env
-   ```
-
-2. **Edit `.env` with your paths**
-   ```bash
-   nano .env  # or use your preferred editor
-   ```
-
-3. **Key configuration variables**
-   
-   The `.env` file supports the following variables:
-   
-   ```bash
-   # Data & Output Paths
-   export INPUT_DIR="/path/to/your/dataset"
-   export OUTPUT_DIR="$ROOT_DIR/outputs/your_run_name"
-   export HF_HOME="/path/to/huggingface/models"
-   
-   # Crops Configuration
-   export MIN_IMAGES_PER_TAG=20  # Use 10 for dummy data at xl-vlms/data
-   
-   # Optional: Model Configuration
-   export VLM_MODEL="Qwen/Qwen2.5-VL-3B-Instruct"
-   export BATCH_SIZE=48
-   export DEVICE_ID=0
-   export DECOMP_METHODS="snmf"
-   ```
-
-4. **Using `$ROOT_DIR` variable**
-   
-   The `.env` file has access to `$ROOT_DIR` (the xl-vlms project directory):
-   ```bash
-   # Use $ROOT_DIR for paths inside the project
-   export OUTPUT_DIR="$ROOT_DIR/outputs/my_experiment"
-   export IMAGE_ROOT="$ROOT_DIR/data/grids"
-   
-   # Use absolute paths for external resources
-   export INPUT_DIR="/mnt/sda/datasets/food-101"
-   export HF_HOME="/mnt/sdz/models"
-   ```
-
-5. **Quick configuration switching**
-   
-   For dummy/test data:
-   ```bash
-   export INPUT_DIR="$ROOT_DIR/data"
-   export MIN_IMAGES_PER_TAG=10
-   export OUTPUT_DIR="$ROOT_DIR/outputs/test_run"
-   ```
-   
-   For full datasets:
-   ```bash
-   export INPUT_DIR="/path/to/full/dataset"
-   export MIN_IMAGES_PER_TAG=20
-   export OUTPUT_DIR="$ROOT_DIR/outputs/production_run"
-   ```
-
-**Note:** The `.env` file is ignored by git (in `.gitignore`) to keep your local paths private. Use `.env.example` as a template for sharing configuration structure.
-
-### Full Pipeline (Recommended)
-
-The easiest way to run the complete pipeline:
-
-1. **Configure your environment** (see Configuration section above)
-   ```bash
-   cp .env.example .env
-   nano .env  # Edit with your paths
-   ```
-
-2. **Run the full pipeline**
-   ```bash
-   ./scripts/run_full_pipeline_without_coroping.sh
-   ```
-   
-   The script automatically loads your `.env` configuration and runs:
-   - Dataset inference → concept mapping
-   - Crop generation with concept grounding
-   - Feature extraction
-   - Feature decomposition (SNMF/NMF/PCA)
-   - VLM explanation
-   - Concept deletion/insertion evaluation
-   - Visualization plots
-
-3. **Results location**
-   ```
-   $OUTPUT_DIR/
-   ├── inference/           # Concepts and crops
-   ├── features/            # Extracted features
-   ├── concept/             # Decomposed concepts per method
-   ├── explanations/        # VLM explanations per method
-   ├── eval/                # Evaluation results (CSV files)
-   └── plots/               # Visualizations
-   ```
-
-4. **Command-line overrides** (optional)
-   ```bash
-   # Override specific variables without editing .env
-   MIN_IMAGES_PER_TAG=5 OUTPUT_DIR="./outputs/quick_test" \
-     ./scripts/run_full_pipeline_without_coroping.sh
-   
-   # Or use flags
-   ./scripts/run_full_pipeline_without_coroping.sh \
-     --input-dir /path/to/data \
-     --output-dir ./outputs/experiment_1 \
-     --decomp snmf,nmf,pca
-   ```
-
-All results will be found in the `eval/` folder of your configured output directory.
-
-## Complete Workflow: Pipeline → Visualization → Evaluation
-
-Follow these steps in order to run the complete analysis pipeline:
-
-### Step 1: Run the Full Pipeline
-
-Run the main pipeline script to generate all intermediate results:
-
-```bash
-./scripts/run_full_pipeline_without_coroping.sh
-```
-
-This generates:
-- Concept mappings and crops
-- Feature extractions
-- Decomposed concepts (per method: snmf, nmf, pca, etc.)
-- VLM explanations (`explanations/{method}/vlm_explanations.json`)
-- Concept deletion/insertion evaluation results
-
-### Step 2: Run Visualization Notebook
-
-Generate per-token concept grounding visualizations:
-
-```bash
-jupyter notebook output_vis.ipynb
-```
-
-**Or run programmatically:**
-```bash
-jupyter nbconvert --to notebook --execute output_vis.ipynb
-```
-
-The notebook automatically:
-- Loads your `.env` configuration to find `OUTPUT_DIR`
-- Reads explanations from `$OUTPUT_DIR/explanations/{method}/vlm_explanations.json`
-- Generates per-token visualizations saved to `$OUTPUT_DIR/plots/grounding_per_token/`
-
-**Manual configuration (if needed):**
-If the notebook doesn't auto-detect your output directory, you can manually set paths in the notebook:
-```python
-EXPLANATIONS_JSON = "/path/to/your/explanations/snmf/vlm_explanations.json"
-VIZ_OUTPUT_DIR = "/path/to/output/plots/grounding_per_token"
-```
-
-### Step 3: Run BERTScore and CLIPScore Evaluation
-
-Evaluate the quality of explanations using BERTScore (text similarity) and CLIPScore (image similarity):
-
-**For a single explanations file:**
-```bash
-python clip_bert_score_explanation.py \
-    --json_path outputs/your_run/explanations/snmf/vlm_explanations.json
-```
-
-**For batch evaluation across multiple methods:**
-```bash
-python clip_bert_score_explanation.py \
-    --root_dir outputs/your_run \
-    --decomp_method snmf \
-    --output_csv outputs/your_run/eval/snmf/bert_clip_scores.csv
-```
-
-**For multiple decomposition methods:**
-```bash
-# Evaluate each method separately
-for method in snmf nmf pca; do
-    python clip_bert_score_explanation.py \
-        --root_dir outputs/your_run \
-        --decomp_method $method \
-        --output_csv outputs/your_run/eval/$method/bert_clip_scores.csv
-done
-```
-
-**Output:**
-- Console output with BERTScore and CLIPScore metrics for Top-1, Top-2, Top-3
-- CSV file (if `--output_csv` specified) with mean and std for each metric
-
-**Requirements for BERT/CLIP evaluation:**
-- CUDA-capable GPU (recommended) or set `BERT_DEVICE=cpu` and `CLIP_DEVICE=cpu`
-- `bert-score` package: `pip install bert-score`
-- `clip` package: `pip install git+https://github.com/openai/CLIP.git`
-
-## Running the Jupyter Notebook (Detailed)
-
-To visualize the results manually:
-
-1. **Run the notebook:**
-```bash
-   jupyter notebook output_vis.ipynb
-```
-
-2. **The notebook automatically:**
-   - Loads configuration from `.env` file
-   - Finds explanations JSON from `$OUTPUT_DIR/explanations/{method}/vlm_explanations.json`
-   - Generates visualizations for each token
-   - Saves outputs to `$OUTPUT_DIR/plots/grounding_per_token/`
-
-3. **Manual path configuration (if needed):**
-   
-   In the notebook, you can override paths:
-```python
-   # Override auto-detected paths
-   EXPLANATIONS_JSON = "/path/to/your/explanations/snmf/vlm_explanations.json"
-   VIZ_OUTPUT_DIR = "/path/to/output/plots/grounding_per_token"
-   
-   visualize_all_per_token(
-       json_path=EXPLANATIONS_JSON,
-       save_dir=VIZ_OUTPUT_DIR,
-       max_concepts=3,
-       max_crops=5,
-       concept_size=200
-   )
-```
-
-
-
-
-
+For the full multi-config ablation matrix (`PROMPT_TEMPLATE` × `CROP_MODE` ×
+`DECOMP_STRATEGY`) and exactly what each metric measures and where it's
+computed, see [`docs/coco10_ablation_methods.md`](docs/coco10_ablation_methods.md).
 
 ## 📂 Folder Structure
 
 - `src/` : Main source code (models, datasets, metrics, helpers, analysis)
-- `scripts/` : Feature generation and decomposition scripts
-- `preprocessing/` : Preprocessing utilities
-- `explaining_binary_task_rsml.ipynb` : Demo notebook
-- `install.sh` : Installation script
-
+- `scripts/` : Pipeline entry points, feature generation/decomposition, ablation drivers
+- `preprocessing/` : Dataset building, crop generation, concept-image mapping
+- `inference/` : Dataset inference and VLM explainer scripts
+- `eval/` : Faithfulness, grounding, and object-classification evaluation scripts
+- `docs/` : `cgdl_quickstart.md` (start here), `coco10_ablation_methods.md`, and `docs/notes/` (older design notes/plans)
+- `notebooks/` : Demo and visualization notebooks
+- `demo/` : Streamlit demo app
+- `legacy/` : Superseded scripts kept for reference only — see `legacy/README.md`
+- `tests/` : Unit/integration tests
 
 For questions or issues, please refer to the repository or contact the maintainers.
 

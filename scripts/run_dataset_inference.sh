@@ -50,7 +50,7 @@ DEVICE_ARG=()
 if [[ -n "${DEVICE:-}" ]]; then DEVICE_ARG=(--device "${DEVICE}"); fi
 
 PROGRAM="$ROOT_DIR/inference/dataset_inference.py"
-CONCEPT_MAPPING_SCRIPT="$ROOT_DIR/concept_image_mapping.py"
+CONCEPT_MAPPING_SCRIPT="$ROOT_DIR/preprocessing/concept_image_mapping.py"
 
 "$PYTHON_BIN" "$PROGRAM" \
     --dataset_path "$DATASET_PATH" \

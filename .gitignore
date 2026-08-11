@@ -32,6 +32,7 @@ token.txt
 
 # Environment and config files (keep .env.example)
 .env
+.env_backup
 config.env
 
 # Miniconda installer and related

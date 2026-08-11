@@ -29,7 +29,7 @@ Two metrics per criterion:
     the standard way multi-guess "top-k F1" is defined when the alternative
     (plain top-k accuracy) doesn't answer per-class precision/recall.
 
-Writes:
+Writes (default, full-grid mode):
   outputs/rebuttal_ablation_10class/_report/object_detection_topk.csv
     per (condition, crop_mode, seed): n_images, top1/top2 accuracy + F1
   outputs/rebuttal_ablation_10class/_report/object_detection_topk_summary.csv
@@ -37,7 +37,18 @@ Writes:
 
 Usage:
     python scripts/detect_object_topk_f1.py
+    # Score one arbitrary run's vlm_explanations.json instead of the ablation
+    # grid (ground truth is read from each image path's own parent directory
+    # name -- this needs a per-class IMAGE_ROOT layout, e.g. val_masked/<class>/,
+    # not the multi-object val_grids/ layout used by the main cgdl pipeline):
+    python scripts/detect_object_topk_f1.py \\
+        --explanations outputs/cgdl_run/explanations/snmf/vlm_explanations.json
+    # Override the class list if it's not coco10's 10 categories:
+    python scripts/detect_object_topk_f1.py \\
+        --explanations outputs/cgdl_run/explanations/snmf/vlm_explanations.json \\
+        --classes apple,banana,cat
 """
+import argparse
 import csv
 import json
 import sys
@@ -65,9 +76,8 @@ def _concept_label(concept_name: Optional[List[str]]) -> Optional[str]:
     return Counter(concept_name).most_common(1)[0][0]
 
 
-def load_predictions(config_name_str: str) -> List[Tuple[str, Optional[str], Optional[str]]]:
-    """Returns [(true_label, pred_rank1, pred_rank2), ...] for one config."""
-    path = ABLATION_ROOT / config_name_str / "explanations" / METHOD / "vlm_explanations.json"
+def rows_from_explanations(path: Path) -> List[Tuple[str, Optional[str], Optional[str]]]:
+    """Returns [(true_label, pred_rank1, pred_rank2), ...] from one vlm_explanations.json."""
     if not path.exists():
         return []
     with open(path) as f:
@@ -87,9 +97,16 @@ def load_predictions(config_name_str: str) -> List[Tuple[str, Optional[str], Opt
     return out
 
 
-def _top2_f1_macro(y_true: List[str], pred1: List[Optional[str]], pred2: List[Optional[str]]) -> float:
+def load_predictions(config_name_str: str) -> List[Tuple[str, Optional[str], Optional[str]]]:
+    """Returns [(true_label, pred_rank1, pred_rank2), ...] for one ablation-grid config."""
+    path = ABLATION_ROOT / config_name_str / "explanations" / METHOD / "vlm_explanations.json"
+    return rows_from_explanations(path)
+
+
+def _top2_f1_macro(y_true: List[str], pred1: List[Optional[str]], pred2: List[Optional[str]],
+                    classes: Optional[List[str]] = None) -> float:
     f1s = []
-    for c in CLASSES:
+    for c in (classes or CLASSES):
         tp = fp = fn = 0
         for t, p1, p2 in zip(y_true, pred1, pred2):
             guessed = c in (p1, p2)
@@ -109,7 +126,9 @@ def _top2_f1_macro(y_true: List[str], pred1: List[Optional[str]], pred2: List[Op
     return float(np.mean(f1s)) if f1s else float("nan")
 
 
-def compute_metrics(rows: List[Tuple[str, Optional[str], Optional[str]]]) -> dict:
+def compute_metrics(rows: List[Tuple[str, Optional[str], Optional[str]]],
+                     classes: Optional[List[str]] = None) -> dict:
+    classes = classes or CLASSES
     y_true = [r[0] for r in rows]
     pred1 = [r[1] for r in rows]
     pred2 = [r[2] for r in rows]
@@ -118,8 +137,8 @@ def compute_metrics(rows: List[Tuple[str, Optional[str], Optional[str]]]) -> dic
     top2_hits = [h or (t == p2) for h, t, p2 in zip(top1_hits, y_true, pred2)]
 
     pred1_filled = [p if p is not None else "__none__" for p in pred1]
-    top1_f1 = f1_score(y_true, pred1_filled, average="macro", labels=CLASSES, zero_division=0)
-    top2_f1 = _top2_f1_macro(y_true, pred1, pred2)
+    top1_f1 = f1_score(y_true, pred1_filled, average="macro", labels=classes, zero_division=0)
+    top2_f1 = _top2_f1_macro(y_true, pred1, pred2, classes=classes)
 
     return {
         "n_images": len(rows),
@@ -171,7 +190,53 @@ def write_summary_csv(rows: List[dict], out_path: Path) -> None:
     return summary
 
 
+def parse_args() -> argparse.Namespace:
+    parser = argparse.ArgumentParser(description=__doc__, formatter_class=argparse.RawDescriptionHelpFormatter)
+    parser.add_argument(
+        "--explanations", type=Path, default=None,
+        help="Path to a single vlm_explanations.json to score, instead of scanning the "
+             "full 10-class rebuttal ablation grid. Ground truth is read from each "
+             "image path's own parent directory name, so IMAGE_ROOT must be a "
+             "per-class layout (e.g. data/coco10/val_masked/<class>/), not val_grids/.",
+    )
+    parser.add_argument(
+        "--classes", type=str, default=None,
+        help="Comma-separated ground-truth class names for --explanations mode "
+             "(default: the 10 coco10 categories baked into this script).",
+    )
+    parser.add_argument(
+        "--out", type=Path, default=None,
+        help="Output CSV path for --explanations mode "
+             "(default: <explanations_dir>/object_detection_topk_single.csv).",
+    )
+    return parser.parse_args()
+
+
+def run_single(explanations: Path, classes: Optional[List[str]], out: Optional[Path]) -> None:
+    rows = rows_from_explanations(explanations)
+    if not rows:
+        print(f"No results found in {explanations}")
+        return
+    metrics = compute_metrics(rows, classes=classes)
+    out_path = out or explanations.parent / "object_detection_topk_single.csv"
+    cols = ["n_images", "top1_accuracy", "top1_f1_macro", "top2_accuracy", "top2_f1_macro"]
+    with open(out_path, "w", newline="") as f:
+        w = csv.writer(f)
+        w.writerow(cols)
+        w.writerow([metrics[c] for c in cols])
+    print(f"[{explanations}] n={metrics['n_images']} "
+          f"top1_acc={metrics['top1_accuracy']:.3f} top1_f1={metrics['top1_f1_macro']:.3f} "
+          f"top2_acc={metrics['top2_accuracy']:.3f} top2_f1={metrics['top2_f1_macro']:.3f}")
+    print(f"Wrote {out_path}")
+
+
 def main() -> None:
+    args = parse_args()
+    if args.explanations:
+        classes = args.classes.split(",") if args.classes else None
+        run_single(args.explanations, classes, args.out)
+        return
+
     out_dir = ABLATION_ROOT / "_report"
     out_dir.mkdir(parents=True, exist_ok=True)
 

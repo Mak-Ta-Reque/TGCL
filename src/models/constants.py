@@ -60,7 +60,7 @@ concept_prompt = "Identify the concept/pattern single word. Answer with one word
 null_prompt = ""
  # Respond with one of these two options only."
 stict_prompt = "Identify the pattern in the image as either '[concept]' or 'No [concept]' ? Respond with one of these two options only."
-p7 = "Classify the image as either [concept] or No [concept] based on its content. Return only the predicted label."
+p7 = "Classify the image as either [concept] or No [concept] based on its content. Use exactly the word [concept] -- not a synonym -- in your answer. Return only the predicted label."
 grounding_class= "Classify the image as either [concept] or No [concept] based on its content. Answer with only one of these two options."
 multiple_choice_prompt = "Classify this image. If it shows [concept], output exactly '[concept]'. Otherwise, output 'No [concept]'. Respond with only one of these two options."
 

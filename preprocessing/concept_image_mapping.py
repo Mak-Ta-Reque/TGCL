@@ -6,12 +6,16 @@ For each concept (string) found in predicted_text, maps it to the images where i
 
 import csv
 import json
+import sys
 from collections import defaultdict
 from pathlib import Path
 import re
 import argparse
 import inflect
-import re
+
+sys.path.insert(0, str(Path(__file__).parent))
+from inflect_utils import safe_singular_noun  # noqa: E402
+
 p = inflect.engine()
 
 # Prefer spaCy stop words if available; otherwise use a small fallback set.
@@ -55,7 +59,7 @@ def clean_concept(concept: str) -> str:
     concept = re.sub(r'[^a-z\s]', '', concept)
     concept = re.sub(r'\s+', ' ', concept).strip()
     # Singularize each word safely
-    words = [p.singular_noun(w) or w for w in concept.split()]
+    words = [safe_singular_noun(w, p) for w in concept.split()]
     return ' '.join(words)
 
 

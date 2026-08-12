@@ -18,6 +18,9 @@ from typing import Optional
 
 import inflect
 
+sys.path.insert(0, str(Path(__file__).parent))
+from inflect_utils import safe_singular_noun  # noqa: E402
+
 p = inflect.engine()
 
 
@@ -26,7 +29,7 @@ def _normalize_concept_name(name: str) -> str:
     value = name.strip().casefold()
     if not value:
         return value
-    return " ".join(p.singular_noun(word) or word for word in value.split())
+    return " ".join(safe_singular_noun(word, p) for word in value.split())
 
 
 def _load_concept_vocab(vocab_path: Path) -> Optional[set]:

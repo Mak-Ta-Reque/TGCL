@@ -1,41 +1,64 @@
-# bert_score==0.3.13
-# clip==0.2.0
-# huggingface_hub
-# inflect
-# git+https://github.com/bckim92/language-evaluation.git
-# matplotlib==3.10.5
-# nltk==3.9.1
-# numpy==2.3.2
-# packaging==25.0
-# Pillow==11.3.0
-# psutil==7.0.0
-# pydicom==3.0.1
-# qwen_vl_utils==0.0.11
-# Requests==2.32.5
-# scikit_learn==1.7.1
+# Dependencies for the tgcl pipeline (README.md). Verified by installing
+# into a fresh conda env (python=3.10) and running the actual pipeline code
+# end to end, not just import-checking.
+#
+# torch/torchvision need PyTorch's own CUDA-matched index URL, so they're
+# installed separately per README.md §1 rather than listed here:
+#   pip install torch torchvision --index-url https://download.pytorch.org/whl/cu126
+#
+# Usage: pip install -r requirements.txt
+# (then: python -m spacy download en_core_web_sm -- spacy models aren't
+# installable as a plain requirements.txt line)
+
+# ======================
+# Core -- dataset build, feature extraction, decomposition, explanation, evaluation
+# ======================
+transformers
+huggingface_hub
+numpy
+Pillow
+tqdm
 scipy>=1.10.0
-# HuggingFace accelerate - required for device_map / multi-GPU / CPU offload
-accelerate>=0.20.0
-# spacy==3.8.7
-# torch==2.8.0+cu126
-# torchvision==0.23.0+cu126
-# tqdm==4.67.1
-# transformers==4.55.3
-
-# API / FastAPI server
-fastapi==0.109.0
-uvicorn[standard]==0.27.0
-python-multipart==0.0.6
-aiofiles==23.2.1
-umap-learn==0.5.5
-# Required for API image processing and data manipulation
-Pillow>=11.3.0
-numpy>=1.20.0,<2
-scikit-learn>=1.0.0
-
-# YOLO instance segmentation detector
-ultralytics>=8.3
+scikit-learn
+matplotlib
+psutil
+inflect
+nltk
+python-dotenv
 pycocotools>=2.0
+packaging
+requests
+spacy
 
-# OpenCV for inpainting (Navier-Stokes / Telea)
+# Required for device_map="auto"/multi-GPU model loading (src/models/__init__.py) --
+# transformers raises ValueError outright without it, confirmed by loading a
+# model both ways in a fresh env. Not optional despite the name.
+accelerate>=0.20.0
+
+# ======================
+# Eval-script-specific (only if you run that particular eval script)
+# ======================
+bert-score                                       # eval/clip_bert_score_eval.py
+# git+https://github.com/openai/CLIP.git         # same file, + CLIP-scored crop ranking
+qwen-vl-utils                                    # only if using a Qwen2.5-VL model
+# pydicom                                        # only used by the CheXagent model class
+
+# ======================
+# Crop-mode-specific (preprocessing/crops_to_json.py's CROP_MODE) -- only
+# install the one you'll actually use; none/sliding_window need neither
+# ======================
+# git+https://github.com/luca-medeiros/lang-segment-anything.git   # CROP_MODE=langsam
+# CROP_MODE=sam3 needs Meta's SAM3, not on PyPI -- out of scope here.
+
+# OpenCV: only needed for INPAINTING_METHOD=ns or telea (src/save_features.py
+# lazily imports cv2 for those two methods only). The documented default,
+# gaussian_blur, doesn't need it -- kept active here since sam3/langsam crop
+# modes commonly pair with it, but drop it if you're not using either.
 opencv-python>=4.5.0
+
+# ======================
+# Legacy/optional -- not on the tgcl pipeline's critical path
+# ======================
+# git+https://github.com/bckim92/language-evaluation.git   # src/metrics/captioning_metrics.py's
+#                                                            # "captioning_metrics" eval type only
+#                                                            # (lazy-imported, not required otherwise)

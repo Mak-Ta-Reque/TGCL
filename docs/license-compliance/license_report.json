@@ -1,0 +1,2032 @@
+[
+  {
+    "name": "AUDIOOP-LTS",
+    "version": "0.2.2",
+    "license": "PSF-2.0",
+    "category": "Unknown",
+    "licensecheck_compat": true,
+    "field_of_use_flag": "",
+    "fall": 3,
+    "action": "Do not use. Escalate to Tobias proactively."
+  },
+  {
+    "name": "CUDA-BINDINGS",
+    "version": "12.9.4",
+    "license": "LICENSEREF-NVIDIA-SOFTWARE-LICENSE",
+    "category": "Unknown",
+    "licensecheck_compat": false,
+    "field_of_use_flag": "",
+    "fall": 3,
+    "action": "Do not use. Escalate to Tobias proactively."
+  },
+  {
+    "name": "CUDA-TOOLKIT",
+    "version": "12.6.3",
+    "license": "UNKNOWN",
+    "category": "Unknown",
+    "licensecheck_compat": false,
+    "field_of_use_flag": "",
+    "fall": 3,
+    "action": "Do not use. Escalate to Tobias proactively."
+  },
+  {
+    "name": "FSSPEC",
+    "version": "2026.4.0",
+    "license": "UNKNOWN",
+    "category": "Unknown",
+    "licensecheck_compat": false,
+    "field_of_use_flag": "",
+    "fall": 3,
+    "action": "Do not use. Escalate to Tobias proactively."
+  },
+  {
+    "name": "LANG-SAM",
+    "version": "0.2.1",
+    "license": "UNKNOWN",
+    "category": "Unknown",
+    "licensecheck_compat": false,
+    "field_of_use_flag": "",
+    "fall": 3,
+    "action": "Do not use. Escalate to Tobias proactively."
+  },
+  {
+    "name": "NVIDIA-CUBLAS-CU12",
+    "version": "12.6.4.1",
+    "license": "OTHER_PROPRIETARY LICENSE",
+    "category": "Unknown",
+    "licensecheck_compat": false,
+    "field_of_use_flag": "",
+    "fall": 3,
+    "action": "Do not use. Escalate to Tobias proactively."
+  },
+  {
+    "name": "NVIDIA-CUDA-CUPTI-CU12",
+    "version": "12.6.80",
+    "license": "OTHER_PROPRIETARY LICENSE",
+    "category": "Unknown",
+    "licensecheck_compat": false,
+    "field_of_use_flag": "",
+    "fall": 3,
+    "action": "Do not use. Escalate to Tobias proactively."
+  },
+  {
+    "name": "NVIDIA-CUDA-NVRTC-CU12",
+    "version": "12.6.85",
+    "license": "OTHER_PROPRIETARY LICENSE",
+    "category": "Unknown",
+    "licensecheck_compat": false,
+    "field_of_use_flag": "",
+    "fall": 3,
+    "action": "Do not use. Escalate to Tobias proactively."
+  },
+  {
+    "name": "NVIDIA-CUDA-RUNTIME-CU12",
+    "version": "12.6.77",
+    "license": "OTHER_PROPRIETARY LICENSE",
+    "category": "Unknown",
+    "licensecheck_compat": false,
+    "field_of_use_flag": "",
+    "fall": 3,
+    "action": "Do not use. Escalate to Tobias proactively."
+  },
+  {
+    "name": "NVIDIA-CUDNN-CU12",
+    "version": "9.10.2.21",
+    "license": "OTHER_PROPRIETARY LICENSE",
+    "category": "Unknown",
+    "licensecheck_compat": false,
+    "field_of_use_flag": "",
+    "fall": 3,
+    "action": "Do not use. Escalate to Tobias proactively."
+  },
+  {
+    "name": "NVIDIA-CUFFT-CU12",
+    "version": "11.3.0.4",
+    "license": "OTHER_PROPRIETARY LICENSE",
+    "category": "Unknown",
+    "licensecheck_compat": false,
+    "field_of_use_flag": "",
+    "fall": 3,
+    "action": "Do not use. Escalate to Tobias proactively."
+  },
+  {
+    "name": "NVIDIA-CUFILE-CU12",
+    "version": "1.11.1.6",
+    "license": "OTHER_PROPRIETARY LICENSE",
+    "category": "Unknown",
+    "licensecheck_compat": false,
+    "field_of_use_flag": "",
+    "fall": 3,
+    "action": "Do not use. Escalate to Tobias proactively."
+  },
+  {
+    "name": "NVIDIA-CURAND-CU12",
+    "version": "10.3.7.77",
+    "license": "OTHER_PROPRIETARY LICENSE",
+    "category": "Unknown",
+    "licensecheck_compat": false,
+    "field_of_use_flag": "",
+    "fall": 3,
+    "action": "Do not use. Escalate to Tobias proactively."
+  },
+  {
+    "name": "NVIDIA-CUSOLVER-CU12",
+    "version": "11.7.1.2",
+    "license": "OTHER_PROPRIETARY LICENSE",
+    "category": "Unknown",
+    "licensecheck_compat": false,
+    "field_of_use_flag": "",
+    "fall": 3,
+    "action": "Do not use. Escalate to Tobias proactively."
+  },
+  {
+    "name": "NVIDIA-CUSPARSE-CU12",
+    "version": "12.5.4.2",
+    "license": "OTHER_PROPRIETARY LICENSE",
+    "category": "Unknown",
+    "licensecheck_compat": false,
+    "field_of_use_flag": "",
+    "fall": 3,
+    "action": "Do not use. Escalate to Tobias proactively."
+  },
+  {
+    "name": "NVIDIA-CUSPARSELT-CU12",
+    "version": "0.7.1",
+    "license": "NVIDIA PROPRIETARY SOFTWARE",
+    "category": "Unknown",
+    "licensecheck_compat": false,
+    "field_of_use_flag": "",
+    "fall": 3,
+    "action": "Do not use. Escalate to Tobias proactively."
+  },
+  {
+    "name": "NVIDIA-NCCL-CU12",
+    "version": "2.29.3",
+    "license": "UNKNOWN",
+    "category": "Unknown",
+    "licensecheck_compat": false,
+    "field_of_use_flag": "",
+    "fall": 3,
+    "action": "Do not use. Escalate to Tobias proactively."
+  },
+  {
+    "name": "NVIDIA-NVJITLINK-CU12",
+    "version": "12.6.85",
+    "license": "OTHER_PROPRIETARY LICENSE",
+    "category": "Unknown",
+    "licensecheck_compat": false,
+    "field_of_use_flag": "",
+    "fall": 3,
+    "action": "Do not use. Escalate to Tobias proactively."
+  },
+  {
+    "name": "NVIDIA-NVSHMEM-CU12",
+    "version": "3.4.5",
+    "license": "UNKNOWN",
+    "category": "Unknown",
+    "licensecheck_compat": false,
+    "field_of_use_flag": "",
+    "fall": 3,
+    "action": "Do not use. Escalate to Tobias proactively."
+  },
+  {
+    "name": "NVIDIA-NVTX-CU12",
+    "version": "12.6.77",
+    "license": "OTHER_PROPRIETARY LICENSE",
+    "category": "Unknown",
+    "licensecheck_compat": false,
+    "field_of_use_flag": "",
+    "fall": 3,
+    "action": "Do not use. Escalate to Tobias proactively."
+  },
+  {
+    "name": "TYPING-EXTENSIONS",
+    "version": "4.15.0",
+    "license": "PSF-2.0",
+    "category": "Unknown",
+    "licensecheck_compat": true,
+    "field_of_use_flag": "",
+    "fall": 3,
+    "action": "Do not use. Escalate to Tobias proactively."
+  },
+  {
+    "name": "CERTIFI",
+    "version": "2026.6.17",
+    "license": "MOZILLA PUBLIC LICENSE 2.0 _MPL 2.0_",
+    "category": "Weakly Protective",
+    "licensecheck_compat": true,
+    "field_of_use_flag": "",
+    "fall": 2,
+    "action": "Check for a permissive alternative (Option A). If none, dynamic/modular integration only (Schritt 3) - own directory + own LICENSE file."
+  },
+  {
+    "name": "ORJSON",
+    "version": "3.11.9",
+    "license": "APACHE SOFTWARE LICENSE;; MIT LICENSE;; MOZILLA PUBLIC LICENSE 2.0 _MPL 2.0_",
+    "category": "Weakly Protective",
+    "licensecheck_compat": true,
+    "field_of_use_flag": "",
+    "fall": 2,
+    "action": "Check for a permissive alternative (Option A). If none, dynamic/modular integration only (Schritt 3) - own directory + own LICENSE file."
+  },
+  {
+    "name": "PYZMQ",
+    "version": "25.1.2",
+    "license": "BSD LICENSE;; GNU LIBRARY;; LESSER GENERAL PUBLIC LICENSE _LGPL_",
+    "category": "Weakly Protective",
+    "licensecheck_compat": true,
+    "field_of_use_flag": "",
+    "fall": 2,
+    "action": "Check for a permissive alternative (Option A). If none, dynamic/modular integration only (Schritt 3) - own directory + own LICENSE file."
+  },
+  {
+    "name": "TQDM",
+    "version": "4.68.4",
+    "license": "MIT;; MPL-2.0",
+    "category": "Weakly Protective",
+    "licensecheck_compat": true,
+    "field_of_use_flag": "",
+    "fall": 2,
+    "action": "Check for a permissive alternative (Option A). If none, dynamic/modular integration only (Schritt 3) - own directory + own LICENSE file."
+  },
+  {
+    "name": "ABSL-PY",
+    "version": "2.5.0",
+    "license": "APACHE SOFTWARE LICENSE",
+    "category": "Permissive",
+    "licensecheck_compat": true,
+    "field_of_use_flag": "",
+    "fall": 1,
+    "action": "OK - satisfy attribution/NOTICE duties"
+  },
+  {
+    "name": "ACCELERATE",
+    "version": "1.14.0",
+    "license": "APACHE SOFTWARE LICENSE",
+    "category": "Permissive",
+    "licensecheck_compat": true,
+    "field_of_use_flag": "",
+    "fall": 1,
+    "action": "OK - satisfy attribution/NOTICE duties"
+  },
+  {
+    "name": "AIOCONTEXTVARS",
+    "version": "0.2.2",
+    "license": "BSD LICENSE",
+    "category": "Permissive",
+    "licensecheck_compat": true,
+    "field_of_use_flag": "",
+    "fall": 1,
+    "action": "OK - satisfy attribution/NOTICE duties"
+  },
+  {
+    "name": "ANNOTATED-DOC",
+    "version": "0.0.4",
+    "license": "MIT",
+    "category": "Permissive",
+    "licensecheck_compat": true,
+    "field_of_use_flag": "",
+    "fall": 1,
+    "action": "OK - satisfy attribution/NOTICE duties"
+  },
+  {
+    "name": "ANNOTATED-TYPES",
+    "version": "0.7.0",
+    "license": "MIT LICENSE",
+    "category": "Permissive",
+    "licensecheck_compat": true,
+    "field_of_use_flag": "",
+    "fall": 1,
+    "action": "OK - satisfy attribution/NOTICE duties"
+  },
+  {
+    "name": "ANTLR4-PYTHON3-RUNTIME",
+    "version": "4.9.3",
+    "license": "BSD",
+    "category": "Permissive",
+    "licensecheck_compat": true,
+    "field_of_use_flag": "",
+    "fall": 1,
+    "action": "OK - satisfy attribution/NOTICE duties"
+  },
+  {
+    "name": "ANYIO",
+    "version": "4.14.1",
+    "license": "MIT",
+    "category": "Permissive",
+    "licensecheck_compat": true,
+    "field_of_use_flag": "",
+    "fall": 1,
+    "action": "OK - satisfy attribution/NOTICE duties"
+  },
+  {
+    "name": "APPDIRS",
+    "version": "1.4.4",
+    "license": "MIT LICENSE",
+    "category": "Permissive",
+    "licensecheck_compat": true,
+    "field_of_use_flag": "",
+    "fall": 1,
+    "action": "OK - satisfy attribution/NOTICE duties"
+  },
+  {
+    "name": "APPNOPE",
+    "version": "0.1.4",
+    "license": "BSD LICENSE",
+    "category": "Permissive",
+    "licensecheck_compat": true,
+    "field_of_use_flag": "",
+    "fall": 1,
+    "action": "OK - satisfy attribution/NOTICE duties"
+  },
+  {
+    "name": "ASTTOKENS",
+    "version": "2.4.1",
+    "license": "APACHE 2.0",
+    "category": "Permissive",
+    "licensecheck_compat": true,
+    "field_of_use_flag": "",
+    "fall": 1,
+    "action": "OK - satisfy attribution/NOTICE duties"
+  },
+  {
+    "name": "ATTRS",
+    "version": "23.2.0",
+    "license": "MIT LICENSE",
+    "category": "Permissive",
+    "licensecheck_compat": true,
+    "field_of_use_flag": "",
+    "fall": 1,
+    "action": "OK - satisfy attribution/NOTICE duties"
+  },
+  {
+    "name": "AV",
+    "version": "17.1.0",
+    "license": "BSD-3-CLAUSE",
+    "category": "Permissive",
+    "licensecheck_compat": true,
+    "field_of_use_flag": "",
+    "fall": 1,
+    "action": "OK - satisfy attribution/NOTICE duties"
+  },
+  {
+    "name": "BACKPORTS-FUNCTOOLS-LRU-CACHE",
+    "version": "2.0.0",
+    "license": "MIT LICENSE",
+    "category": "Permissive",
+    "licensecheck_compat": true,
+    "field_of_use_flag": "",
+    "fall": 1,
+    "action": "OK - satisfy attribution/NOTICE duties"
+  },
+  {
+    "name": "BERT-SCORE",
+    "version": "0.3.13",
+    "license": "MIT LICENSE",
+    "category": "Permissive",
+    "licensecheck_compat": true,
+    "field_of_use_flag": "",
+    "fall": 1,
+    "action": "OK - satisfy attribution/NOTICE duties"
+  },
+  {
+    "name": "BLIS",
+    "version": "1.3.3",
+    "license": "BSD LICENSE",
+    "category": "Permissive",
+    "licensecheck_compat": true,
+    "field_of_use_flag": "",
+    "fall": 1,
+    "action": "OK - satisfy attribution/NOTICE duties"
+  },
+  {
+    "name": "BOOLEAN-PY",
+    "version": "5.0",
+    "license": "BSD-2-CLAUSE",
+    "category": "Permissive",
+    "licensecheck_compat": true,
+    "field_of_use_flag": "",
+    "fall": 1,
+    "action": "OK - satisfy attribution/NOTICE duties"
+  },
+  {
+    "name": "BROTLI",
+    "version": "1.2.0",
+    "license": "MIT",
+    "category": "Permissive",
+    "licensecheck_compat": true,
+    "field_of_use_flag": "",
+    "fall": 1,
+    "action": "OK - satisfy attribution/NOTICE duties"
+  },
+  {
+    "name": "CATALOGUE",
+    "version": "2.0.10",
+    "license": "MIT LICENSE",
+    "category": "Permissive",
+    "licensecheck_compat": true,
+    "field_of_use_flag": "",
+    "fall": 1,
+    "action": "OK - satisfy attribution/NOTICE duties"
+  },
+  {
+    "name": "CATTRS",
+    "version": "24.1.3",
+    "license": "MIT LICENSE",
+    "category": "Permissive",
+    "licensecheck_compat": true,
+    "field_of_use_flag": "",
+    "fall": 1,
+    "action": "OK - satisfy attribution/NOTICE duties"
+  },
+  {
+    "name": "CFFI",
+    "version": "2.1.1",
+    "license": "MIT-0",
+    "category": "Permissive",
+    "licensecheck_compat": true,
+    "field_of_use_flag": "",
+    "fall": 1,
+    "action": "OK - satisfy attribution/NOTICE duties"
+  },
+  {
+    "name": "CHARSET-NORMALIZER",
+    "version": "3.4.9",
+    "license": "MIT",
+    "category": "Permissive",
+    "licensecheck_compat": true,
+    "field_of_use_flag": "",
+    "fall": 1,
+    "action": "OK - satisfy attribution/NOTICE duties"
+  },
+  {
+    "name": "CLICK",
+    "version": "8.4.2",
+    "license": "BSD-3-CLAUSE",
+    "category": "Permissive",
+    "licensecheck_compat": true,
+    "field_of_use_flag": "",
+    "fall": 1,
+    "action": "OK - satisfy attribution/NOTICE duties"
+  },
+  {
+    "name": "CLIP",
+    "version": "1.0",
+    "license": "MIT LICENSE",
+    "category": "Permissive",
+    "licensecheck_compat": true,
+    "field_of_use_flag": "",
+    "fall": 1,
+    "action": "OK - satisfy attribution/NOTICE duties"
+  },
+  {
+    "name": "CLOUDPATHLIB",
+    "version": "0.24.0",
+    "license": "MIT LICENSE",
+    "category": "Permissive",
+    "licensecheck_compat": true,
+    "field_of_use_flag": "",
+    "fall": 1,
+    "action": "OK - satisfy attribution/NOTICE duties"
+  },
+  {
+    "name": "COLORAMA",
+    "version": "0.4.6",
+    "license": "BSD LICENSE",
+    "category": "Permissive",
+    "licensecheck_compat": true,
+    "field_of_use_flag": "",
+    "fall": 1,
+    "action": "OK - satisfy attribution/NOTICE duties"
+  },
+  {
+    "name": "COLORLOG",
+    "version": "6.10.1",
+    "license": "MIT LICENSE",
+    "category": "Permissive",
+    "licensecheck_compat": true,
+    "field_of_use_flag": "",
+    "fall": 1,
+    "action": "OK - satisfy attribution/NOTICE duties"
+  },
+  {
+    "name": "COMM",
+    "version": "0.2.2",
+    "license": "BSD LICENSE",
+    "category": "Permissive",
+    "licensecheck_compat": true,
+    "field_of_use_flag": "",
+    "fall": 1,
+    "action": "OK - satisfy attribution/NOTICE duties"
+  },
+  {
+    "name": "CONFECTION",
+    "version": "1.3.3",
+    "license": "MIT LICENSE",
+    "category": "Permissive",
+    "licensecheck_compat": true,
+    "field_of_use_flag": "",
+    "fall": 1,
+    "action": "OK - satisfy attribution/NOTICE duties"
+  },
+  {
+    "name": "CONTOURPY",
+    "version": "1.3.2",
+    "license": "BSD LICENSE",
+    "category": "Permissive",
+    "licensecheck_compat": true,
+    "field_of_use_flag": "",
+    "fall": 1,
+    "action": "OK - satisfy attribution/NOTICE duties"
+  },
+  {
+    "name": "CUDA-PATHFINDER",
+    "version": "1.2.2",
+    "license": "APACHE-2.0",
+    "category": "Permissive",
+    "licensecheck_compat": true,
+    "field_of_use_flag": "",
+    "fall": 1,
+    "action": "OK - satisfy attribution/NOTICE duties"
+  },
+  {
+    "name": "CYCLER",
+    "version": "0.12.1",
+    "license": "BSD LICENSE",
+    "category": "Permissive",
+    "licensecheck_compat": true,
+    "field_of_use_flag": "",
+    "fall": 1,
+    "action": "OK - satisfy attribution/NOTICE duties"
+  },
+  {
+    "name": "CYMEM",
+    "version": "2.0.13",
+    "license": "MIT LICENSE",
+    "category": "Permissive",
+    "licensecheck_compat": true,
+    "field_of_use_flag": "",
+    "fall": 1,
+    "action": "OK - satisfy attribution/NOTICE duties"
+  },
+  {
+    "name": "DATACLASSES",
+    "version": "0.8",
+    "license": "APACHE SOFTWARE LICENSE",
+    "category": "Permissive",
+    "licensecheck_compat": true,
+    "field_of_use_flag": "",
+    "fall": 1,
+    "action": "OK - satisfy attribution/NOTICE duties"
+  },
+  {
+    "name": "DEBUGPY",
+    "version": "1.8.1",
+    "license": "MIT LICENSE",
+    "category": "Permissive",
+    "licensecheck_compat": true,
+    "field_of_use_flag": "",
+    "fall": 1,
+    "action": "OK - satisfy attribution/NOTICE duties"
+  },
+  {
+    "name": "DECORATOR",
+    "version": "5.1.1",
+    "license": "BSD LICENSE",
+    "category": "Permissive",
+    "licensecheck_compat": true,
+    "field_of_use_flag": "",
+    "fall": 1,
+    "action": "OK - satisfy attribution/NOTICE duties"
+  },
+  {
+    "name": "DEFUSEDXML",
+    "version": "0.7.1",
+    "license": "PYTHON SOFTWARE FOUNDATION LICENSE",
+    "category": "Permissive",
+    "licensecheck_compat": true,
+    "field_of_use_flag": "",
+    "fall": 1,
+    "action": "OK - satisfy attribution/NOTICE duties"
+  },
+  {
+    "name": "EN-CORE-WEB-SM",
+    "version": "3.8.0",
+    "license": "MIT",
+    "category": "Permissive",
+    "licensecheck_compat": true,
+    "field_of_use_flag": "",
+    "fall": 1,
+    "action": "OK - satisfy attribution/NOTICE duties"
+  },
+  {
+    "name": "EXCEPTIONGROUP",
+    "version": "1.3.1",
+    "license": "MIT LICENSE",
+    "category": "Permissive",
+    "licensecheck_compat": true,
+    "field_of_use_flag": "",
+    "fall": 1,
+    "action": "OK - satisfy attribution/NOTICE duties"
+  },
+  {
+    "name": "EXECUTING",
+    "version": "2.0.1",
+    "license": "MIT LICENSE",
+    "category": "Permissive",
+    "licensecheck_compat": true,
+    "field_of_use_flag": "",
+    "fall": 1,
+    "action": "OK - satisfy attribution/NOTICE duties"
+  },
+  {
+    "name": "FASTAPI",
+    "version": "0.139.0",
+    "license": "MIT",
+    "category": "Permissive",
+    "licensecheck_compat": true,
+    "field_of_use_flag": "",
+    "fall": 1,
+    "action": "OK - satisfy attribution/NOTICE duties"
+  },
+  {
+    "name": "FHCONFPARSER",
+    "version": "2024.1",
+    "license": "MIT LICENSE",
+    "category": "Permissive",
+    "licensecheck_compat": true,
+    "field_of_use_flag": "",
+    "fall": 1,
+    "action": "OK - satisfy attribution/NOTICE duties"
+  },
+  {
+    "name": "FILELOCK",
+    "version": "3.29.0",
+    "license": "MIT LICENSE",
+    "category": "Permissive",
+    "licensecheck_compat": true,
+    "field_of_use_flag": "",
+    "fall": 1,
+    "action": "OK - satisfy attribution/NOTICE duties"
+  },
+  {
+    "name": "FONTTOOLS",
+    "version": "4.63.0",
+    "license": "MIT",
+    "category": "Permissive",
+    "licensecheck_compat": true,
+    "field_of_use_flag": "",
+    "fall": 1,
+    "action": "OK - satisfy attribution/NOTICE duties"
+  },
+  {
+    "name": "FTFY",
+    "version": "6.3.1",
+    "license": "APACHE-2.0",
+    "category": "Permissive",
+    "licensecheck_compat": true,
+    "field_of_use_flag": "",
+    "fall": 1,
+    "action": "OK - satisfy attribution/NOTICE duties"
+  },
+  {
+    "name": "GRADIO",
+    "version": "6.20.0",
+    "license": "APACHE-2.0",
+    "category": "Permissive",
+    "licensecheck_compat": true,
+    "field_of_use_flag": "",
+    "fall": 1,
+    "action": "OK - satisfy attribution/NOTICE duties"
+  },
+  {
+    "name": "GRADIO-CLIENT",
+    "version": "2.5.0",
+    "license": "APACHE SOFTWARE LICENSE",
+    "category": "Permissive",
+    "licensecheck_compat": true,
+    "field_of_use_flag": "",
+    "fall": 1,
+    "action": "OK - satisfy attribution/NOTICE duties"
+  },
+  {
+    "name": "GROOVY",
+    "version": "0.1.2",
+    "license": "MIT LICENSE",
+    "category": "Permissive",
+    "licensecheck_compat": true,
+    "field_of_use_flag": "",
+    "fall": 1,
+    "action": "OK - satisfy attribution/NOTICE duties"
+  },
+  {
+    "name": "H11",
+    "version": "0.16.0",
+    "license": "MIT LICENSE",
+    "category": "Permissive",
+    "licensecheck_compat": true,
+    "field_of_use_flag": "",
+    "fall": 1,
+    "action": "OK - satisfy attribution/NOTICE duties"
+  },
+  {
+    "name": "HF-GRADIO",
+    "version": "0.4.1",
+    "license": "MIT",
+    "category": "Permissive",
+    "licensecheck_compat": true,
+    "field_of_use_flag": "",
+    "fall": 1,
+    "action": "OK - satisfy attribution/NOTICE duties"
+  },
+  {
+    "name": "HF-XET",
+    "version": "1.5.1",
+    "license": "APACHE SOFTWARE LICENSE",
+    "category": "Permissive",
+    "licensecheck_compat": true,
+    "field_of_use_flag": "",
+    "fall": 1,
+    "action": "OK - satisfy attribution/NOTICE duties"
+  },
+  {
+    "name": "HTTPCORE",
+    "version": "1.0.9",
+    "license": "BSD LICENSE",
+    "category": "Permissive",
+    "licensecheck_compat": true,
+    "field_of_use_flag": "",
+    "fall": 1,
+    "action": "OK - satisfy attribution/NOTICE duties"
+  },
+  {
+    "name": "HTTPTOOLS",
+    "version": "0.8.0",
+    "license": "MIT",
+    "category": "Permissive",
+    "licensecheck_compat": true,
+    "field_of_use_flag": "",
+    "fall": 1,
+    "action": "OK - satisfy attribution/NOTICE duties"
+  },
+  {
+    "name": "HTTPX",
+    "version": "0.28.1",
+    "license": "BSD LICENSE",
+    "category": "Permissive",
+    "licensecheck_compat": true,
+    "field_of_use_flag": "",
+    "fall": 1,
+    "action": "OK - satisfy attribution/NOTICE duties"
+  },
+  {
+    "name": "HUGGINGFACE-HUB",
+    "version": "1.22.0",
+    "license": "APACHE SOFTWARE LICENSE",
+    "category": "Permissive",
+    "licensecheck_compat": true,
+    "field_of_use_flag": "",
+    "fall": 1,
+    "action": "OK - satisfy attribution/NOTICE duties"
+  },
+  {
+    "name": "HYDRA-CORE",
+    "version": "1.3.4",
+    "license": "MIT LICENSE",
+    "category": "Permissive",
+    "licensecheck_compat": true,
+    "field_of_use_flag": "",
+    "fall": 1,
+    "action": "OK - satisfy attribution/NOTICE duties"
+  },
+  {
+    "name": "IDNA",
+    "version": "3.18",
+    "license": "BSD-3-CLAUSE",
+    "category": "Permissive",
+    "licensecheck_compat": true,
+    "field_of_use_flag": "",
+    "fall": 1,
+    "action": "OK - satisfy attribution/NOTICE duties"
+  },
+  {
+    "name": "IMAGEIO",
+    "version": "2.37.3",
+    "license": "BSD-2-CLAUSE",
+    "category": "Permissive",
+    "licensecheck_compat": true,
+    "field_of_use_flag": "",
+    "fall": 1,
+    "action": "OK - satisfy attribution/NOTICE duties"
+  },
+  {
+    "name": "IMPORTLIB-METADATA",
+    "version": "9.0.0",
+    "license": "APACHE-2.0",
+    "category": "Permissive",
+    "licensecheck_compat": true,
+    "field_of_use_flag": "",
+    "fall": 1,
+    "action": "OK - satisfy attribution/NOTICE duties"
+  },
+  {
+    "name": "IMPORTLIB-RESOURCES",
+    "version": "7.1.0",
+    "license": "APACHE-2.0",
+    "category": "Permissive",
+    "licensecheck_compat": true,
+    "field_of_use_flag": "",
+    "fall": 1,
+    "action": "OK - satisfy attribution/NOTICE duties"
+  },
+  {
+    "name": "INFLECT",
+    "version": "7.5.0",
+    "license": "MIT LICENSE",
+    "category": "Permissive",
+    "licensecheck_compat": true,
+    "field_of_use_flag": "",
+    "fall": 1,
+    "action": "OK - satisfy attribution/NOTICE duties"
+  },
+  {
+    "name": "INICONFIG",
+    "version": "2.3.0",
+    "license": "MIT",
+    "category": "Permissive",
+    "licensecheck_compat": true,
+    "field_of_use_flag": "",
+    "fall": 1,
+    "action": "OK - satisfy attribution/NOTICE duties"
+  },
+  {
+    "name": "IOPATH",
+    "version": "0.1.10",
+    "license": "MIT LICENSED_ AS FOUND IN THE LICENSE FILE",
+    "category": "Permissive",
+    "licensecheck_compat": true,
+    "field_of_use_flag": "",
+    "fall": 1,
+    "action": "OK - satisfy attribution/NOTICE duties"
+  },
+  {
+    "name": "IPYKERNEL",
+    "version": "6.29.4",
+    "license": "BSD LICENSE",
+    "category": "Permissive",
+    "licensecheck_compat": true,
+    "field_of_use_flag": "",
+    "fall": 1,
+    "action": "OK - satisfy attribution/NOTICE duties"
+  },
+  {
+    "name": "IPYTHON",
+    "version": "8.22.2",
+    "license": "BSD LICENSE",
+    "category": "Permissive",
+    "licensecheck_compat": true,
+    "field_of_use_flag": "",
+    "fall": 1,
+    "action": "OK - satisfy attribution/NOTICE duties"
+  },
+  {
+    "name": "JEDI",
+    "version": "0.19.1",
+    "license": "MIT LICENSE",
+    "category": "Permissive",
+    "licensecheck_compat": true,
+    "field_of_use_flag": "",
+    "fall": 1,
+    "action": "OK - satisfy attribution/NOTICE duties"
+  },
+  {
+    "name": "JINJA2",
+    "version": "3.1.6",
+    "license": "BSD LICENSE",
+    "category": "Permissive",
+    "licensecheck_compat": true,
+    "field_of_use_flag": "",
+    "fall": 1,
+    "action": "OK - satisfy attribution/NOTICE duties"
+  },
+  {
+    "name": "JOBLIB",
+    "version": "1.5.3",
+    "license": "BSD-3-CLAUSE",
+    "category": "Permissive",
+    "licensecheck_compat": true,
+    "field_of_use_flag": "",
+    "fall": 1,
+    "action": "OK - satisfy attribution/NOTICE duties"
+  },
+  {
+    "name": "JUPYTER-CLIENT",
+    "version": "8.6.1",
+    "license": "BSD LICENSE",
+    "category": "Permissive",
+    "licensecheck_compat": true,
+    "field_of_use_flag": "",
+    "fall": 1,
+    "action": "OK - satisfy attribution/NOTICE duties"
+  },
+  {
+    "name": "JUPYTER-CORE",
+    "version": "5.7.2",
+    "license": "BSD LICENSE",
+    "category": "Permissive",
+    "licensecheck_compat": true,
+    "field_of_use_flag": "",
+    "fall": 1,
+    "action": "OK - satisfy attribution/NOTICE duties"
+  },
+  {
+    "name": "KIWISOLVER",
+    "version": "1.5.0",
+    "license": "BSD LICENSE",
+    "category": "Permissive",
+    "licensecheck_compat": true,
+    "field_of_use_flag": "",
+    "fall": 1,
+    "action": "OK - satisfy attribution/NOTICE duties"
+  },
+  {
+    "name": "LANGUAGE-EVALUATION",
+    "version": "0.1.0",
+    "license": "MIT LICENSE",
+    "category": "Permissive",
+    "licensecheck_compat": true,
+    "field_of_use_flag": "",
+    "fall": 1,
+    "action": "OK - satisfy attribution/NOTICE duties"
+  },
+  {
+    "name": "LAZY-LOADER",
+    "version": "0.5",
+    "license": "BSD-3-CLAUSE",
+    "category": "Permissive",
+    "licensecheck_compat": true,
+    "field_of_use_flag": "",
+    "fall": 1,
+    "action": "OK - satisfy attribution/NOTICE duties"
+  },
+  {
+    "name": "LICENSE-EXPRESSION",
+    "version": "30.4.4",
+    "license": "APACHE-2.0",
+    "category": "Permissive",
+    "licensecheck_compat": true,
+    "field_of_use_flag": "",
+    "fall": 1,
+    "action": "OK - satisfy attribution/NOTICE duties"
+  },
+  {
+    "name": "LICENSECHECK",
+    "version": "2025.1.0",
+    "license": "MIT",
+    "category": "Permissive",
+    "licensecheck_compat": true,
+    "field_of_use_flag": "",
+    "fall": 1,
+    "action": "OK - satisfy attribution/NOTICE duties"
+  },
+  {
+    "name": "LITSERVE",
+    "version": "0.2.17",
+    "license": "APACHE SOFTWARE LICENSE",
+    "category": "Permissive",
+    "licensecheck_compat": true,
+    "field_of_use_flag": "",
+    "fall": 1,
+    "action": "OK - satisfy attribution/NOTICE duties"
+  },
+  {
+    "name": "LOGURU",
+    "version": "0.7.3",
+    "license": "MIT LICENSE",
+    "category": "Permissive",
+    "licensecheck_compat": true,
+    "field_of_use_flag": "",
+    "fall": 1,
+    "action": "OK - satisfy attribution/NOTICE duties"
+  },
+  {
+    "name": "MARKDOWN",
+    "version": "3.10.3",
+    "license": "BSD-3-CLAUSE",
+    "category": "Permissive",
+    "licensecheck_compat": true,
+    "field_of_use_flag": "",
+    "fall": 1,
+    "action": "OK - satisfy attribution/NOTICE duties"
+  },
+  {
+    "name": "MARKDOWN-IT-PY",
+    "version": "4.2.0",
+    "license": "MIT LICENSE",
+    "category": "Permissive",
+    "licensecheck_compat": true,
+    "field_of_use_flag": "",
+    "fall": 1,
+    "action": "OK - satisfy attribution/NOTICE duties"
+  },
+  {
+    "name": "MARKUPSAFE",
+    "version": "3.0.3",
+    "license": "BSD-3-CLAUSE",
+    "category": "Permissive",
+    "licensecheck_compat": true,
+    "field_of_use_flag": "",
+    "fall": 1,
+    "action": "OK - satisfy attribution/NOTICE duties"
+  },
+  {
+    "name": "MATPLOTLIB",
+    "version": "3.10.9",
+    "license": "PYTHON SOFTWARE FOUNDATION LICENSE",
+    "category": "Permissive",
+    "licensecheck_compat": true,
+    "field_of_use_flag": "",
+    "fall": 1,
+    "action": "OK - satisfy attribution/NOTICE duties"
+  },
+  {
+    "name": "MATPLOTLIB-INLINE",
+    "version": "0.1.6",
+    "license": "BSD 3-CLAUSE",
+    "category": "Permissive",
+    "licensecheck_compat": true,
+    "field_of_use_flag": "",
+    "fall": 1,
+    "action": "OK - satisfy attribution/NOTICE duties"
+  },
+  {
+    "name": "MDURL",
+    "version": "0.1.2",
+    "license": "MIT LICENSE",
+    "category": "Permissive",
+    "licensecheck_compat": true,
+    "field_of_use_flag": "",
+    "fall": 1,
+    "action": "OK - satisfy attribution/NOTICE duties"
+  },
+  {
+    "name": "MORE-ITERTOOLS",
+    "version": "11.1.0",
+    "license": "MIT",
+    "category": "Permissive",
+    "licensecheck_compat": true,
+    "field_of_use_flag": "",
+    "fall": 1,
+    "action": "OK - satisfy attribution/NOTICE duties"
+  },
+  {
+    "name": "MPMATH",
+    "version": "1.3.0",
+    "license": "BSD LICENSE",
+    "category": "Permissive",
+    "licensecheck_compat": true,
+    "field_of_use_flag": "",
+    "fall": 1,
+    "action": "OK - satisfy attribution/NOTICE duties"
+  },
+  {
+    "name": "MURMURHASH",
+    "version": "1.0.15",
+    "license": "MIT LICENSE",
+    "category": "Permissive",
+    "licensecheck_compat": true,
+    "field_of_use_flag": "",
+    "fall": 1,
+    "action": "OK - satisfy attribution/NOTICE duties"
+  },
+  {
+    "name": "NEST-ASYNCIO",
+    "version": "1.6.0",
+    "license": "BSD LICENSE",
+    "category": "Permissive",
+    "licensecheck_compat": true,
+    "field_of_use_flag": "",
+    "fall": 1,
+    "action": "OK - satisfy attribution/NOTICE duties"
+  },
+  {
+    "name": "NEST-ASYNCIO2",
+    "version": "1.7.2",
+    "license": "BSD LICENSE",
+    "category": "Permissive",
+    "licensecheck_compat": true,
+    "field_of_use_flag": "",
+    "fall": 1,
+    "action": "OK - satisfy attribution/NOTICE duties"
+  },
+  {
+    "name": "NETWORKX",
+    "version": "3.4.2",
+    "license": "BSD LICENSE",
+    "category": "Permissive",
+    "licensecheck_compat": true,
+    "field_of_use_flag": "",
+    "fall": 1,
+    "action": "OK - satisfy attribution/NOTICE duties"
+  },
+  {
+    "name": "NLTK",
+    "version": "3.10.0",
+    "license": "APACHE SOFTWARE LICENSE",
+    "category": "Permissive",
+    "licensecheck_compat": true,
+    "field_of_use_flag": "",
+    "fall": 1,
+    "action": "OK - satisfy attribution/NOTICE duties"
+  },
+  {
+    "name": "NUMPY",
+    "version": "2.2.6",
+    "license": "BSD LICENSE",
+    "category": "Permissive",
+    "licensecheck_compat": true,
+    "field_of_use_flag": "",
+    "fall": 1,
+    "action": "OK - satisfy attribution/NOTICE duties"
+  },
+  {
+    "name": "OMEGACONF",
+    "version": "2.3.1",
+    "license": "BSD LICENSE",
+    "category": "Permissive",
+    "licensecheck_compat": true,
+    "field_of_use_flag": "",
+    "fall": 1,
+    "action": "OK - satisfy attribution/NOTICE duties"
+  },
+  {
+    "name": "OPENCV-PYTHON",
+    "version": "5.0.0.93",
+    "license": "APACHE SOFTWARE LICENSE",
+    "category": "Permissive",
+    "licensecheck_compat": true,
+    "field_of_use_flag": "",
+    "fall": 1,
+    "action": "OK - satisfy attribution/NOTICE duties"
+  },
+  {
+    "name": "OPENCV-PYTHON-HEADLESS",
+    "version": "5.0.0.93",
+    "license": "APACHE SOFTWARE LICENSE",
+    "category": "Permissive",
+    "licensecheck_compat": true,
+    "field_of_use_flag": "",
+    "fall": 1,
+    "action": "OK - satisfy attribution/NOTICE duties"
+  },
+  {
+    "name": "PACKAGING",
+    "version": "26.2",
+    "license": "APACHE-2.0;; BSD-2-CLAUSE",
+    "category": "Permissive",
+    "licensecheck_compat": true,
+    "field_of_use_flag": "",
+    "fall": 1,
+    "action": "OK - satisfy attribution/NOTICE duties"
+  },
+  {
+    "name": "PANDAS",
+    "version": "2.3.3",
+    "license": "BSD LICENSE",
+    "category": "Permissive",
+    "licensecheck_compat": true,
+    "field_of_use_flag": "",
+    "fall": 1,
+    "action": "OK - satisfy attribution/NOTICE duties"
+  },
+  {
+    "name": "PARSO",
+    "version": "0.8.3",
+    "license": "MIT LICENSE",
+    "category": "Permissive",
+    "licensecheck_compat": true,
+    "field_of_use_flag": "",
+    "fall": 1,
+    "action": "OK - satisfy attribution/NOTICE duties"
+  },
+  {
+    "name": "PATHLIB2",
+    "version": "2.3.7.post1",
+    "license": "MIT LICENSE",
+    "category": "Permissive",
+    "licensecheck_compat": true,
+    "field_of_use_flag": "",
+    "fall": 1,
+    "action": "OK - satisfy attribution/NOTICE duties"
+  },
+  {
+    "name": "PEXPECT",
+    "version": "4.9.0",
+    "license": "ISC LICENSE _ISCL_",
+    "category": "Permissive",
+    "licensecheck_compat": true,
+    "field_of_use_flag": "",
+    "fall": 1,
+    "action": "OK - satisfy attribution/NOTICE duties"
+  },
+  {
+    "name": "PICKLESHARE",
+    "version": "0.7.5",
+    "license": "MIT LICENSE",
+    "category": "Permissive",
+    "licensecheck_compat": true,
+    "field_of_use_flag": "",
+    "fall": 1,
+    "action": "OK - satisfy attribution/NOTICE duties"
+  },
+  {
+    "name": "PILLOW",
+    "version": "12.2.0",
+    "license": "MIT-CMU",
+    "category": "Permissive",
+    "licensecheck_compat": true,
+    "field_of_use_flag": "",
+    "fall": 1,
+    "action": "OK - satisfy attribution/NOTICE duties"
+  },
+  {
+    "name": "PLATFORMDIRS",
+    "version": "4.10.0",
+    "license": "MIT LICENSE",
+    "category": "Permissive",
+    "licensecheck_compat": true,
+    "field_of_use_flag": "",
+    "fall": 1,
+    "action": "OK - satisfy attribution/NOTICE duties"
+  },
+  {
+    "name": "PLUGGY",
+    "version": "1.6.0",
+    "license": "MIT LICENSE",
+    "category": "Permissive",
+    "licensecheck_compat": true,
+    "field_of_use_flag": "",
+    "fall": 1,
+    "action": "OK - satisfy attribution/NOTICE duties"
+  },
+  {
+    "name": "PORTALOCKER",
+    "version": "3.2.0",
+    "license": "BSD-3-CLAUSE",
+    "category": "Permissive",
+    "licensecheck_compat": true,
+    "field_of_use_flag": "",
+    "fall": 1,
+    "action": "OK - satisfy attribution/NOTICE duties"
+  },
+  {
+    "name": "PRESHED",
+    "version": "3.0.13",
+    "license": "MIT LICENSE",
+    "category": "Permissive",
+    "licensecheck_compat": true,
+    "field_of_use_flag": "",
+    "fall": 1,
+    "action": "OK - satisfy attribution/NOTICE duties"
+  },
+  {
+    "name": "PROMPT-TOOLKIT",
+    "version": "3.0.43",
+    "license": "BSD LICENSE",
+    "category": "Permissive",
+    "licensecheck_compat": true,
+    "field_of_use_flag": "",
+    "fall": 1,
+    "action": "OK - satisfy attribution/NOTICE duties"
+  },
+  {
+    "name": "PSUTIL",
+    "version": "7.2.2",
+    "license": "BSD-3-CLAUSE",
+    "category": "Permissive",
+    "licensecheck_compat": true,
+    "field_of_use_flag": "",
+    "fall": 1,
+    "action": "OK - satisfy attribution/NOTICE duties"
+  },
+  {
+    "name": "PTYPROCESS",
+    "version": "0.7.0",
+    "license": "ISC LICENSE _ISCL_",
+    "category": "Permissive",
+    "licensecheck_compat": true,
+    "field_of_use_flag": "",
+    "fall": 1,
+    "action": "OK - satisfy attribution/NOTICE duties"
+  },
+  {
+    "name": "PURE-EVAL",
+    "version": "0.2.2",
+    "license": "MIT LICENSE",
+    "category": "Permissive",
+    "licensecheck_compat": true,
+    "field_of_use_flag": "",
+    "fall": 1,
+    "action": "OK - satisfy attribution/NOTICE duties"
+  },
+  {
+    "name": "PYCOCOTOOLS",
+    "version": "2.0.11",
+    "license": "FREEBSD",
+    "category": "Permissive",
+    "licensecheck_compat": true,
+    "field_of_use_flag": "",
+    "fall": 1,
+    "action": "OK - satisfy attribution/NOTICE duties"
+  },
+  {
+    "name": "PYDANTIC",
+    "version": "2.13.4",
+    "license": "MIT",
+    "category": "Permissive",
+    "licensecheck_compat": true,
+    "field_of_use_flag": "",
+    "fall": 1,
+    "action": "OK - satisfy attribution/NOTICE duties"
+  },
+  {
+    "name": "PYDANTIC-CORE",
+    "version": "2.46.4",
+    "license": "MIT",
+    "category": "Permissive",
+    "licensecheck_compat": true,
+    "field_of_use_flag": "",
+    "fall": 1,
+    "action": "OK - satisfy attribution/NOTICE duties"
+  },
+  {
+    "name": "PYDEPRECATE",
+    "version": "0.9.0",
+    "license": "APACHE-2.0",
+    "category": "Permissive",
+    "licensecheck_compat": true,
+    "field_of_use_flag": "",
+    "fall": 1,
+    "action": "OK - satisfy attribution/NOTICE duties"
+  },
+  {
+    "name": "PYDUB",
+    "version": "0.25.1",
+    "license": "MIT LICENSE",
+    "category": "Permissive",
+    "licensecheck_compat": true,
+    "field_of_use_flag": "",
+    "fall": 1,
+    "action": "OK - satisfy attribution/NOTICE duties"
+  },
+  {
+    "name": "PYGMENTS",
+    "version": "2.20.0",
+    "license": "BSD-2-CLAUSE",
+    "category": "Permissive",
+    "licensecheck_compat": true,
+    "field_of_use_flag": "",
+    "fall": 1,
+    "action": "OK - satisfy attribution/NOTICE duties"
+  },
+  {
+    "name": "PYPARSING",
+    "version": "3.3.2",
+    "license": "MIT",
+    "category": "Permissive",
+    "licensecheck_compat": true,
+    "field_of_use_flag": "",
+    "fall": 1,
+    "action": "OK - satisfy attribution/NOTICE duties"
+  },
+  {
+    "name": "PYTEST",
+    "version": "9.1.1",
+    "license": "MIT",
+    "category": "Permissive",
+    "licensecheck_compat": true,
+    "field_of_use_flag": "",
+    "fall": 1,
+    "action": "OK - satisfy attribution/NOTICE duties"
+  },
+  {
+    "name": "PYTHON-DATEUTIL",
+    "version": "2.9.0.post0",
+    "license": "APACHE SOFTWARE LICENSE;; BSD LICENSE",
+    "category": "Permissive",
+    "licensecheck_compat": true,
+    "field_of_use_flag": "",
+    "fall": 1,
+    "action": "OK - satisfy attribution/NOTICE duties"
+  },
+  {
+    "name": "PYTHON-DOTENV",
+    "version": "1.2.2",
+    "license": "BSD-3-CLAUSE",
+    "category": "Permissive",
+    "licensecheck_compat": true,
+    "field_of_use_flag": "",
+    "fall": 1,
+    "action": "OK - satisfy attribution/NOTICE duties"
+  },
+  {
+    "name": "PYTHON-MULTIPART",
+    "version": "0.0.32",
+    "license": "APACHE SOFTWARE LICENSE",
+    "category": "Permissive",
+    "licensecheck_compat": true,
+    "field_of_use_flag": "",
+    "fall": 1,
+    "action": "OK - satisfy attribution/NOTICE duties"
+  },
+  {
+    "name": "PYTZ",
+    "version": "2026.2",
+    "license": "MIT LICENSE",
+    "category": "Permissive",
+    "licensecheck_compat": true,
+    "field_of_use_flag": "",
+    "fall": 1,
+    "action": "OK - satisfy attribution/NOTICE duties"
+  },
+  {
+    "name": "PYWIN32",
+    "version": "312",
+    "license": "PYTHON SOFTWARE FOUNDATION LICENSE",
+    "category": "Permissive",
+    "licensecheck_compat": true,
+    "field_of_use_flag": "",
+    "fall": 1,
+    "action": "OK - satisfy attribution/NOTICE duties"
+  },
+  {
+    "name": "PYYAML",
+    "version": "6.0.3",
+    "license": "MIT LICENSE",
+    "category": "Permissive",
+    "licensecheck_compat": true,
+    "field_of_use_flag": "",
+    "fall": 1,
+    "action": "OK - satisfy attribution/NOTICE duties"
+  },
+  {
+    "name": "QWEN-VL-UTILS",
+    "version": "0.0.14",
+    "license": "APACHE SOFTWARE LICENSE",
+    "category": "Permissive",
+    "licensecheck_compat": true,
+    "field_of_use_flag": "",
+    "fall": 1,
+    "action": "OK - satisfy attribution/NOTICE duties"
+  },
+  {
+    "name": "REGEX",
+    "version": "2026.6.28",
+    "license": "APACHE-2.0;; CNRI-PYTHON",
+    "category": "Permissive",
+    "licensecheck_compat": true,
+    "field_of_use_flag": "",
+    "fall": 1,
+    "action": "OK - satisfy attribution/NOTICE duties"
+  },
+  {
+    "name": "REQUESTS",
+    "version": "2.34.2",
+    "license": "APACHE SOFTWARE LICENSE",
+    "category": "Permissive",
+    "licensecheck_compat": true,
+    "field_of_use_flag": "",
+    "fall": 1,
+    "action": "OK - satisfy attribution/NOTICE duties"
+  },
+  {
+    "name": "REQUESTS-CACHE",
+    "version": "1.3.3",
+    "license": "BSD-2-CLAUSE",
+    "category": "Permissive",
+    "licensecheck_compat": true,
+    "field_of_use_flag": "",
+    "fall": 1,
+    "action": "OK - satisfy attribution/NOTICE duties"
+  },
+  {
+    "name": "REQUIREMENTS-PARSER",
+    "version": "0.13.1",
+    "license": "APACHE SOFTWARE LICENSE",
+    "category": "Permissive",
+    "licensecheck_compat": true,
+    "field_of_use_flag": "",
+    "fall": 1,
+    "action": "OK - satisfy attribution/NOTICE duties"
+  },
+  {
+    "name": "RICH",
+    "version": "15.0.0",
+    "license": "MIT LICENSE",
+    "category": "Permissive",
+    "licensecheck_compat": true,
+    "field_of_use_flag": "",
+    "fall": 1,
+    "action": "OK - satisfy attribution/NOTICE duties"
+  },
+  {
+    "name": "SAFEHTTPX",
+    "version": "0.1.7",
+    "license": "MIT LICENSE",
+    "category": "Permissive",
+    "licensecheck_compat": true,
+    "field_of_use_flag": "",
+    "fall": 1,
+    "action": "OK - satisfy attribution/NOTICE duties"
+  },
+  {
+    "name": "SAFETENSORS",
+    "version": "0.8.0",
+    "license": "APACHE SOFTWARE LICENSE",
+    "category": "Permissive",
+    "licensecheck_compat": true,
+    "field_of_use_flag": "",
+    "fall": 1,
+    "action": "OK - satisfy attribution/NOTICE duties"
+  },
+  {
+    "name": "SAM-2",
+    "version": "1.0",
+    "license": "APACHE 2.0",
+    "category": "Permissive",
+    "licensecheck_compat": true,
+    "field_of_use_flag": "",
+    "fall": 1,
+    "action": "OK - satisfy attribution/NOTICE duties"
+  },
+  {
+    "name": "SCIKIT-IMAGE",
+    "version": "0.25.2",
+    "license": "BSD LICENSE",
+    "category": "Permissive",
+    "licensecheck_compat": true,
+    "field_of_use_flag": "",
+    "fall": 1,
+    "action": "OK - satisfy attribution/NOTICE duties"
+  },
+  {
+    "name": "SCIKIT-LEARN",
+    "version": "1.7.2",
+    "license": "BSD-3-CLAUSE",
+    "category": "Permissive",
+    "licensecheck_compat": true,
+    "field_of_use_flag": "",
+    "fall": 1,
+    "action": "OK - satisfy attribution/NOTICE duties"
+  },
+  {
+    "name": "SCIPY",
+    "version": "1.15.2",
+    "license": "BSD LICENSE",
+    "category": "Permissive",
+    "licensecheck_compat": true,
+    "field_of_use_flag": "",
+    "fall": 1,
+    "action": "OK - satisfy attribution/NOTICE duties"
+  },
+  {
+    "name": "SEMANTIC-VERSION",
+    "version": "2.10.0",
+    "license": "BSD LICENSE",
+    "category": "Permissive",
+    "licensecheck_compat": true,
+    "field_of_use_flag": "",
+    "fall": 1,
+    "action": "OK - satisfy attribution/NOTICE duties"
+  },
+  {
+    "name": "SETUPTOOLS",
+    "version": "70.2.0",
+    "license": "MIT LICENSE",
+    "category": "Permissive",
+    "licensecheck_compat": true,
+    "field_of_use_flag": "",
+    "fall": 1,
+    "action": "OK - satisfy attribution/NOTICE duties"
+  },
+  {
+    "name": "SHELLINGHAM",
+    "version": "1.5.4",
+    "license": "ISC LICENSE _ISCL_",
+    "category": "Permissive",
+    "licensecheck_compat": true,
+    "field_of_use_flag": "",
+    "fall": 1,
+    "action": "OK - satisfy attribution/NOTICE duties"
+  },
+  {
+    "name": "SIX",
+    "version": "1.17.0",
+    "license": "MIT LICENSE",
+    "category": "Permissive",
+    "licensecheck_compat": true,
+    "field_of_use_flag": "",
+    "fall": 1,
+    "action": "OK - satisfy attribution/NOTICE duties"
+  },
+  {
+    "name": "SMART-OPEN",
+    "version": "8.0.0",
+    "license": "MIT LICENSE",
+    "category": "Permissive",
+    "licensecheck_compat": true,
+    "field_of_use_flag": "",
+    "fall": 1,
+    "action": "OK - satisfy attribution/NOTICE duties"
+  },
+  {
+    "name": "SPACY",
+    "version": "3.8.14",
+    "license": "MIT LICENSE",
+    "category": "Permissive",
+    "licensecheck_compat": true,
+    "field_of_use_flag": "",
+    "fall": 1,
+    "action": "OK - satisfy attribution/NOTICE duties"
+  },
+  {
+    "name": "SPACY-LEGACY",
+    "version": "3.0.12",
+    "license": "MIT LICENSE",
+    "category": "Permissive",
+    "licensecheck_compat": true,
+    "field_of_use_flag": "",
+    "fall": 1,
+    "action": "OK - satisfy attribution/NOTICE duties"
+  },
+  {
+    "name": "SPACY-LOGGERS",
+    "version": "1.0.5",
+    "license": "MIT",
+    "category": "Permissive",
+    "licensecheck_compat": true,
+    "field_of_use_flag": "",
+    "fall": 1,
+    "action": "OK - satisfy attribution/NOTICE duties"
+  },
+  {
+    "name": "SRSLY",
+    "version": "2.5.3",
+    "license": "MIT LICENSE",
+    "category": "Permissive",
+    "licensecheck_compat": true,
+    "field_of_use_flag": "",
+    "fall": 1,
+    "action": "OK - satisfy attribution/NOTICE duties"
+  },
+  {
+    "name": "STACK-DATA",
+    "version": "0.6.3",
+    "license": "MIT LICENSE",
+    "category": "Permissive",
+    "licensecheck_compat": true,
+    "field_of_use_flag": "",
+    "fall": 1,
+    "action": "OK - satisfy attribution/NOTICE duties"
+  },
+  {
+    "name": "STARLETTE",
+    "version": "1.3.1",
+    "license": "BSD-3-CLAUSE",
+    "category": "Permissive",
+    "licensecheck_compat": true,
+    "field_of_use_flag": "",
+    "fall": 1,
+    "action": "OK - satisfy attribution/NOTICE duties"
+  },
+  {
+    "name": "SUPERVISION",
+    "version": "0.29.1",
+    "license": "MIT",
+    "category": "Permissive",
+    "licensecheck_compat": true,
+    "field_of_use_flag": "",
+    "fall": 1,
+    "action": "OK - satisfy attribution/NOTICE duties"
+  },
+  {
+    "name": "SYMPY",
+    "version": "1.14.0",
+    "license": "BSD LICENSE",
+    "category": "Permissive",
+    "licensecheck_compat": true,
+    "field_of_use_flag": "",
+    "fall": 1,
+    "action": "OK - satisfy attribution/NOTICE duties"
+  },
+  {
+    "name": "THINC",
+    "version": "8.3.13",
+    "license": "MIT LICENSE",
+    "category": "Permissive",
+    "licensecheck_compat": true,
+    "field_of_use_flag": "",
+    "fall": 1,
+    "action": "OK - satisfy attribution/NOTICE duties"
+  },
+  {
+    "name": "THREADPOOLCTL",
+    "version": "3.6.0",
+    "license": "BSD LICENSE",
+    "category": "Permissive",
+    "licensecheck_compat": true,
+    "field_of_use_flag": "",
+    "fall": 1,
+    "action": "OK - satisfy attribution/NOTICE duties"
+  },
+  {
+    "name": "TIFFFILE",
+    "version": "2025.5.10",
+    "license": "BSD-3-CLAUSE",
+    "category": "Permissive",
+    "licensecheck_compat": true,
+    "field_of_use_flag": "",
+    "fall": 1,
+    "action": "OK - satisfy attribution/NOTICE duties"
+  },
+  {
+    "name": "TIMM",
+    "version": "1.0.27",
+    "license": "APACHE SOFTWARE LICENSE",
+    "category": "Permissive",
+    "licensecheck_compat": true,
+    "field_of_use_flag": "",
+    "fall": 1,
+    "action": "OK - satisfy attribution/NOTICE duties"
+  },
+  {
+    "name": "TOKENIZERS",
+    "version": "0.22.2",
+    "license": "APACHE SOFTWARE LICENSE",
+    "category": "Permissive",
+    "licensecheck_compat": true,
+    "field_of_use_flag": "",
+    "fall": 1,
+    "action": "OK - satisfy attribution/NOTICE duties"
+  },
+  {
+    "name": "TOMLI",
+    "version": "2.4.1",
+    "license": "MIT",
+    "category": "Permissive",
+    "licensecheck_compat": true,
+    "field_of_use_flag": "",
+    "fall": 1,
+    "action": "OK - satisfy attribution/NOTICE duties"
+  },
+  {
+    "name": "TOMLKIT",
+    "version": "0.14.0",
+    "license": "MIT LICENSE",
+    "category": "Permissive",
+    "licensecheck_compat": true,
+    "field_of_use_flag": "",
+    "fall": 1,
+    "action": "OK - satisfy attribution/NOTICE duties"
+  },
+  {
+    "name": "TORCH",
+    "version": "2.12.1+cu126",
+    "license": "BSD-3-CLAUSE",
+    "category": "Permissive",
+    "licensecheck_compat": true,
+    "field_of_use_flag": "",
+    "fall": 1,
+    "action": "OK - satisfy attribution/NOTICE duties"
+  },
+  {
+    "name": "TORCHVISION",
+    "version": "0.27.1+cu126",
+    "license": "BSD",
+    "category": "Permissive",
+    "licensecheck_compat": true,
+    "field_of_use_flag": "",
+    "fall": 1,
+    "action": "OK - satisfy attribution/NOTICE duties"
+  },
+  {
+    "name": "TORNADO",
+    "version": "6.4",
+    "license": "APACHE SOFTWARE LICENSE",
+    "category": "Permissive",
+    "licensecheck_compat": true,
+    "field_of_use_flag": "",
+    "fall": 1,
+    "action": "OK - satisfy attribution/NOTICE duties"
+  },
+  {
+    "name": "TRAITLETS",
+    "version": "5.14.2",
+    "license": "BSD LICENSE",
+    "category": "Permissive",
+    "licensecheck_compat": true,
+    "field_of_use_flag": "",
+    "fall": 1,
+    "action": "OK - satisfy attribution/NOTICE duties"
+  },
+  {
+    "name": "TRANSFORMERS",
+    "version": "5.13.0",
+    "license": "APACHE 2.0 LICENSE",
+    "category": "Permissive",
+    "licensecheck_compat": true,
+    "field_of_use_flag": "",
+    "fall": 1,
+    "action": "OK - satisfy attribution/NOTICE duties"
+  },
+  {
+    "name": "TRITON",
+    "version": "3.7.1",
+    "license": "MIT LICENSE",
+    "category": "Permissive",
+    "licensecheck_compat": true,
+    "field_of_use_flag": "",
+    "fall": 1,
+    "action": "OK - satisfy attribution/NOTICE duties"
+  },
+  {
+    "name": "TYPEGUARD",
+    "version": "4.5.2",
+    "license": "MIT",
+    "category": "Permissive",
+    "licensecheck_compat": true,
+    "field_of_use_flag": "",
+    "fall": 1,
+    "action": "OK - satisfy attribution/NOTICE duties"
+  },
+  {
+    "name": "TYPER",
+    "version": "0.26.8",
+    "license": "MIT",
+    "category": "Permissive",
+    "licensecheck_compat": true,
+    "field_of_use_flag": "",
+    "fall": 1,
+    "action": "OK - satisfy attribution/NOTICE duties"
+  },
+  {
+    "name": "TYPING",
+    "version": "3.10.0.0",
+    "license": "PYTHON SOFTWARE FOUNDATION LICENSE",
+    "category": "Permissive",
+    "licensecheck_compat": true,
+    "field_of_use_flag": "",
+    "fall": 1,
+    "action": "OK - satisfy attribution/NOTICE duties"
+  },
+  {
+    "name": "TYPING-INSPECTION",
+    "version": "0.4.2",
+    "license": "MIT",
+    "category": "Permissive",
+    "licensecheck_compat": true,
+    "field_of_use_flag": "",
+    "fall": 1,
+    "action": "OK - satisfy attribution/NOTICE duties"
+  },
+  {
+    "name": "TZDATA",
+    "version": "2026.2",
+    "license": "APACHE-2.0",
+    "category": "Permissive",
+    "licensecheck_compat": true,
+    "field_of_use_flag": "",
+    "fall": 1,
+    "action": "OK - satisfy attribution/NOTICE duties"
+  },
+  {
+    "name": "URL-NORMALIZE",
+    "version": "3.0.0",
+    "license": "MIT",
+    "category": "Permissive",
+    "licensecheck_compat": true,
+    "field_of_use_flag": "",
+    "fall": 1,
+    "action": "OK - satisfy attribution/NOTICE duties"
+  },
+  {
+    "name": "URLLIB3",
+    "version": "2.7.0",
+    "license": "MIT",
+    "category": "Permissive",
+    "licensecheck_compat": true,
+    "field_of_use_flag": "",
+    "fall": 1,
+    "action": "OK - satisfy attribution/NOTICE duties"
+  },
+  {
+    "name": "UV",
+    "version": "0.12.3",
+    "license": "APACHE-2.0;; MIT",
+    "category": "Permissive",
+    "licensecheck_compat": true,
+    "field_of_use_flag": "",
+    "fall": 1,
+    "action": "OK - satisfy attribution/NOTICE duties"
+  },
+  {
+    "name": "UVICORN",
+    "version": "0.51.0",
+    "license": "BSD-3-CLAUSE",
+    "category": "Permissive",
+    "licensecheck_compat": true,
+    "field_of_use_flag": "",
+    "fall": 1,
+    "action": "OK - satisfy attribution/NOTICE duties"
+  },
+  {
+    "name": "UVLOOP",
+    "version": "0.22.1",
+    "license": "APACHE SOFTWARE LICENSE;; MIT LICENSE",
+    "category": "Permissive",
+    "licensecheck_compat": true,
+    "field_of_use_flag": "",
+    "fall": 1,
+    "action": "OK - satisfy attribution/NOTICE duties"
+  },
+  {
+    "name": "WASABI",
+    "version": "1.1.3",
+    "license": "MIT",
+    "category": "Permissive",
+    "licensecheck_compat": true,
+    "field_of_use_flag": "",
+    "fall": 1,
+    "action": "OK - satisfy attribution/NOTICE duties"
+  },
+  {
+    "name": "WATCHFILES",
+    "version": "1.2.0",
+    "license": "MIT LICENSE",
+    "category": "Permissive",
+    "licensecheck_compat": true,
+    "field_of_use_flag": "",
+    "fall": 1,
+    "action": "OK - satisfy attribution/NOTICE duties"
+  },
+  {
+    "name": "WCWIDTH",
+    "version": "0.2.13",
+    "license": "MIT LICENSE",
+    "category": "Permissive",
+    "licensecheck_compat": true,
+    "field_of_use_flag": "",
+    "fall": 1,
+    "action": "OK - satisfy attribution/NOTICE duties"
+  },
+  {
+    "name": "WEASEL",
+    "version": "1.0.0",
+    "license": "MIT LICENSE",
+    "category": "Permissive",
+    "licensecheck_compat": true,
+    "field_of_use_flag": "",
+    "fall": 1,
+    "action": "OK - satisfy attribution/NOTICE duties"
+  },
+  {
+    "name": "WEBSOCKETS",
+    "version": "16.0",
+    "license": "BSD-3-CLAUSE",
+    "category": "Permissive",
+    "licensecheck_compat": true,
+    "field_of_use_flag": "",
+    "fall": 1,
+    "action": "OK - satisfy attribution/NOTICE duties"
+  },
+  {
+    "name": "WIN32-SETCTIME",
+    "version": "1.2.0",
+    "license": "MIT LICENSE",
+    "category": "Permissive",
+    "licensecheck_compat": true,
+    "field_of_use_flag": "",
+    "fall": 1,
+    "action": "OK - satisfy attribution/NOTICE duties"
+  },
+  {
+    "name": "WRAPT",
+    "version": "2.2.2",
+    "license": "BSD-2-CLAUSE",
+    "category": "Permissive",
+    "licensecheck_compat": true,
+    "field_of_use_flag": "",
+    "fall": 1,
+    "action": "OK - satisfy attribution/NOTICE duties"
+  },
+  {
+    "name": "ZIPP",
+    "version": "4.1.0",
+    "license": "MIT",
+    "category": "Permissive",
+    "licensecheck_compat": true,
+    "field_of_use_flag": "",
+    "fall": 1,
+    "action": "OK - satisfy attribution/NOTICE duties"
+  }
+]

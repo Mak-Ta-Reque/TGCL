@@ -51,9 +51,6 @@ METHOD = "snmf"
 DATASET_ABLATION_ROOTS = {
     "imagenet10": "outputs/ablation",
     "coco10": "outputs/ablation_coco10",
-    # Same 16 configs, evaluated on single-object crops (val_masked) instead
-    # of grids (val_grids) -- see run_ablation_singleobj.py.
-    "coco10_singleobj": "outputs/ablation_coco10_singleobj",
 }
 
 

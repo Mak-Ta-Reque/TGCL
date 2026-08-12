@@ -2,8 +2,7 @@
 """
 XL-VLMs Pipeline - Native Python Implementation
 
-This script is a Python conversion of run_full_pipeline_without_coroping.sh
-for easier debugging and development in VS Code.
+Canonical single-config pipeline entry point -- see docs/cgdl_quickstart.md.
 
 Steps:
 1) Dataset inference -> concepts map

@@ -124,13 +124,21 @@ explanation, evaluation):
 
 ```bash
 pip install transformers huggingface_hub numpy Pillow tqdm scipy scikit-learn \
-  matplotlib psutil inflect nltk python-dotenv pycocotools packaging requests spacy
+  matplotlib psutil inflect nltk python-dotenv pycocotools packaging requests spacy \
+  accelerate
 python -m spacy download en_core_web_sm
 
 pip install bert-score                                    # eval/clip_bert_score_eval.py
 pip install git+https://github.com/openai/CLIP.git        # same file, + CLIP-scored crop ranking
 pip install qwen-vl-utils                                 # only if using a Qwen2.5-VL model
 ```
+
+`accelerate` isn't optional if you ever use multi-GPU (`DEVICE=cuda:0,1` or
+`auto`) — `src/models/__init__.py` passes `device_map` to `from_pretrained`
+in that case, which `transformers` refuses outright without it (`ValueError:
+Using a device_map... requires accelerate`, confirmed by actually loading a
+model both ways in a fresh env). Single-GPU (`DEVICE=cuda:0`) works without
+it, but there's no reason to skip installing it.
 
 Crop-mode-specific (`preprocessing/crops_to_json.py`'s `CROP_MODE`/`--detector`
 lazily imports these — only install the one(s) you'll actually use;

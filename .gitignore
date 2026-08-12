@@ -12,7 +12,7 @@ results/
 annotations.json/
 karpathy/
 logs.log
-
+CLAUDE.md
 
 # Ignore all .pth files
 *.npy

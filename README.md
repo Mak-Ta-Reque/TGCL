@@ -3,7 +3,7 @@
 Minimal instructions for building the AU-AIR dataset, running one pipeline
 config with the `tgcl` (contrastive) prompt template, and evaluating it. For
 the full multi-config ablation matrix and per-metric implementation details,
-see [`docs/coco10_ablation_methods.md`](coco10_ablation_methods.md) (the
+see [`docs/coco10_ablation_methods.md`](docs/coco10_ablation_methods.md) (the
 mechanics documented there are dataset-agnostic despite the filename).
 
 ## 0. Build the dataset
@@ -242,10 +242,15 @@ EVAL_OUT="$CFG/eval/$METHOD"
 causally drive the model's confidence in the token it generated?
 
 ```bash
+# --model_name MUST match the model that produced $EXPLANATIONS/$CONCEPT_PATH
+# in step 2 above -- it re-loads the model to score against its own hidden
+# states, so a different model here silently scores nonsense. If VLM_MODEL
+# isn't already exported in this shell, `source .env` first or export it
+# explicitly.
 python eval/concept_deletion_eval.py \
   --results_json "$EXPLANATIONS" \
   --concept_path "$CONCEPT_PATH" \
-  --model_name google/gemma-3n-E4B-it \
+  --model_name "$VLM_MODEL" \
   --layer_path model.language_model.norm \
   --mode token --num_points 70 \
   --out_dir "$EVAL_OUT" --device cuda:0 \
@@ -300,6 +305,16 @@ quadrants aren't distinguishable in the explainer's per-image output JSON
 `EXPL_*` config with `IMAGE_ROOT=data/auair/val` to get one
 `vlm_explanations.json` entry per single-object image.
 
+**This needs a fresh `OUTPUT_DIR` (or a deleted `explanations/` dir), not
+just a changed `IMAGE_ROOT`.** Step 6's skip-check only tests whether
+`$OUTPUT_DIR/explanations/<method>/vlm_explanations.json` already exists —
+it has no idea `IMAGE_ROOT` changed, so re-running step 2 against the same
+`OUTPUT_DIR` just logs `Skip Explainer (snmf) (found ...)` and reuses the
+stale grid-based file untouched (see
+[`docs/known_bugs/stale-step-skip-checks.md`](docs/known_bugs/stale-step-skip-checks.md)).
+Either `rm -rf "$OUTPUT_DIR/explanations"` first, or use a separate
+`OUTPUT_DIR` for the per-class F1 run.
+
 ```bash
 python scripts/detect_object_topk_f1.py \
   --explanations "$EXPLANATIONS" \
@@ -316,4 +331,12 @@ next to the explanations file).
 For the full multi-config ablation grid (`scripts/run_ablation.py`), the
 `CROP_MODE`/`DECOMP_STRATEGY` axes, and exactly what each metric measures
 and where it's computed, see
-[`docs/coco10_ablation_methods.md`](coco10_ablation_methods.md).
+[`docs/coco10_ablation_methods.md`](docs/coco10_ablation_methods.md).
+
+## Known bugs
+
+Confirmed bugs/limitations found while validating this guide (stale
+skip-checks silently reusing outputs after a config change, a crop-size
+floor that isn't always enforced, an evaluation coverage gotcha, and a
+still-open concept-cleanliness limitation for some AU-AIR categories) are
+tracked in [`docs/known_bugs/`](docs/known_bugs/README.md).

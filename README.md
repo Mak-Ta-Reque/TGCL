@@ -1,7 +1,7 @@
-# Quickstart: CGDL contrastive run + evaluation
+# Quickstart: TGCL contrastive run + evaluation
 
 Minimal instructions for building the AU-AIR dataset, running one pipeline
-config with the `cgdl` (contrastive) prompt template, and evaluating it. For
+config with the `tgcl` (contrastive) prompt template, and evaluating it. For
 the full multi-config ablation matrix and per-metric implementation details,
 see [`docs/coco10_ablation_methods.md`](coco10_ablation_methods.md) (the
 mechanics documented there are dataset-agnostic despite the filename).
@@ -73,9 +73,9 @@ what the object-classification F1 metric in §3 needs — `val_grids/` alone
 won't work for that metric, since a grid's four quadrants aren't
 distinguishable in the explainer's per-image output JSON.
 
-## What `cgdl` is
+## What `tgcl` is
 
-`PROMPT_TEMPLATE=cgdl` sends a contrastive yes/no-style prompt per image:
+`PROMPT_TEMPLATE=tgcl` sends a contrastive yes/no-style prompt per image:
 
 > "Classify the image as either `[concept]` or No `[concept]` based on its
 > content. Return only the predicted label."
@@ -147,7 +147,7 @@ pip install -U git+https://github.com/luca-medeiros/lang-segment-anything.git
 Not needed for this pipeline (installed in some environments for
 unrelated `src/models/` classes or legacy eval paths, e.g. `pydicom` is
 only used by the CheXagent model class): skip unless you hit an
-`ImportError` for a feature you're deliberately using outside the `cgdl`
+`ImportError` for a feature you're deliberately using outside the `tgcl`
 + ablation workflow this doc covers.
 
 Verify the install:
@@ -183,7 +183,7 @@ cp .env.example .env   # if you don't already have one; edit paths as needed
 
 Make sure the dataset was built (§0) before running the pipeline.
 
-## 2. Run the CGDL pipeline
+## 2. Run the TGCL pipeline
 
 Canonical entry point is `scripts/run_full_pipeline.py`, configured via env
 vars:
@@ -192,7 +192,7 @@ vars:
 export INPUT_DIR=data/auair/train_all
 export IMAGE_ROOT=data/auair/val_grids
 export CONCEPTS_VOCAB=src/assets/auair_vocab.txt
-export PROMPT_TEMPLATE=cgdl
+export PROMPT_TEMPLATE=tgcl
 export CROP_MODE=langsam              # or none, or sliding_window
 export DECOMP_METHODS=snmf
 export CLEAN_EXAMPLE_RATIO=0.2

@@ -14,7 +14,7 @@ so the mode is taken defensively). Ground truth is read directly off the
 image path's own parent directory name (.../<class>/...), not a separate
 manifest -- self-contained, no cross-file lookup needed. This needs a
 per-class IMAGE_ROOT layout (e.g. data/coco10/val_masked/<class>/), not the
-multi-object val_grids/ layout used by the main cgdl pipeline.
+multi-object val_grids/ layout used by the main tgcl pipeline.
 
 Two hit criteria:
   - top-1: does the rank-1 concept's name equal the true class?
@@ -33,10 +33,10 @@ Two metrics per criterion:
 
 Usage:
     python scripts/detect_object_topk_f1.py \\
-        --explanations outputs/cgdl_run/explanations/snmf/vlm_explanations.json
+        --explanations outputs/tgcl_run/explanations/snmf/vlm_explanations.json
     # Override the class list if it's not coco10's 10 categories:
     python scripts/detect_object_topk_f1.py \\
-        --explanations outputs/cgdl_run/explanations/snmf/vlm_explanations.json \\
+        --explanations outputs/tgcl_run/explanations/snmf/vlm_explanations.json \\
         --classes apple,banana,cat
 """
 import argparse

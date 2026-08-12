@@ -75,7 +75,7 @@ TASK_PROMPTS = {
         "List of item":null_prompt,
         "Repeat the text": "Repeat the word only"
     },
-    "cgdl": {
+    "tgcl": {
         "ShortVQA":p7 ,
         "ShortCaptioning":p7,
         "ShortCaptioningGrounding":grounding_class,

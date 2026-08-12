@@ -1,0 +1,8 @@
+human
+car
+truck
+van
+motorbike
+bicycle
+bus
+trailer

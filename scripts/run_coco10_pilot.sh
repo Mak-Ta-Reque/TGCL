@@ -32,6 +32,7 @@ DECOMP_METHODS=snmf \
 CLEAN_EXAMPLE_RATIO=0.2 \
 PATCH_SIZE=160 \
 IMAGE_BUDGET=30 \
+MIN_IMAGES_PER_TAG=2 \
 EXPL_MAX_IMAGES=3 \
 EXPL_PROMPT_MODE=mcq \
 EXPL_CHOICES="apple,banana,bird,cake,cat,cup,dog,donut,knife,orange" \

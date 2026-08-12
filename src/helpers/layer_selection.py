@@ -331,7 +331,7 @@ def select_layer_for_tag(
         if logger is not None:
             logger.warning(f"[layer-selection] No regions found for tag '{tag}'; skipping.")
         return None
-    if getattr(args, "prompt_template", None) in ["cgdl", "yn"] and prompt_text:
+    if getattr(args, "prompt_template", None) in ["tgcl", "yn"] and prompt_text:
         prompt_text = prompt_text.replace("[concept]", str(tag))
 
     layer_names = resolve_sweep_layers(model, config["layers_spec"], logger=logger)

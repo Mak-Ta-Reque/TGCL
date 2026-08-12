@@ -126,7 +126,7 @@ def analyse_features(
 ) -> None:
 
     # Mandatory whenever a config's features were extracted with the
-    # save_hidden_states_for_token_of_interest hook (cgdl, non_contrastive):
+    # save_hidden_states_for_token_of_interest hook (tgcl, non_contrastive):
     # samples where the tag word was never found (mask=False, hook fell back
     # to position 0) are noise, not signal, and must be dropped rather than
     # pooled in as if they were real matches. This is a no-op for templates

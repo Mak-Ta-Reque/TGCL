@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 """
-Ablation harness: {cgdl, non_contrastive} x {none, sliding_window, langsam}
+Ablation harness: {tgcl, non_contrastive} x {none, sliding_window, langsam}
 crop modes, 2 repeats (seeds) each, SNMF-only.
 
 Defaults are a fast smoke run (100 training images, 5 explainer images,
@@ -36,7 +36,7 @@ from pathlib import Path
 
 ROOT_DIR = Path(__file__).parent.parent.resolve()
 
-PROMPT_TEMPLATES = ["cgdl", "non_contrastive", "null"]
+PROMPT_TEMPLATES = ["tgcl", "non_contrastive", "null"]
 CROP_MODES = ["none", "sliding_window", "langsam"]
 # DECOMP_STRATEGY is an independent axis from PROMPT_TEMPLATE (see
 # scripts/run_full_pipeline.py's PipelineConfig.decomp_strategy): "per_tag"
@@ -58,7 +58,7 @@ def default_decomp_strategy(prompt_template: str) -> str:
     -- matches PipelineConfig's own default in run_full_pipeline.py, so a run
     that doesn't ask for a specific strategy behaves the same as before this
     axis existed."""
-    return "per_tag" if prompt_template == "cgdl" else "pooled"
+    return "per_tag" if prompt_template == "tgcl" else "pooled"
 
 # Only cache the two files that require an actual VLM forward pass to
 # produce (objects.csv, concepts_to_images.json). The vocab-filtered file
@@ -218,11 +218,11 @@ def main() -> None:
         help=(
             "'default' (16 configs, unchanged from before DECOMP_STRATEGY "
             "existed): each prompt_template x crop_mode x seed combo runs "
-            "once, at that template's default strategy (cgdl -> per_tag, "
+            "once, at that template's default strategy (tgcl -> per_tag, "
             "non_contrastive/null -> pooled). "
             "'all' (36 configs): every prompt_template x crop_mode x seed "
             "combo runs at BOTH per_tag and pooled, including the "
-            "non-default combinations (cgdl+pooled, non_contrastive+per_tag, "
+            "non-default combinations (tgcl+pooled, non_contrastive+per_tag, "
             "null+per_tag) and null+none (previously only run with "
             "langsam/sliding_window crops)."
         ),

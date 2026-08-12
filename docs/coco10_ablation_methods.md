@@ -1,6 +1,6 @@
 # coco10 ablation: method differences and run instructions
 
-Three independent axes: `PROMPT_TEMPLATE` (`cgdl`/`non_contrastive`/`null`, §3),
+Three independent axes: `PROMPT_TEMPLATE` (`tgcl`/`non_contrastive`/`null`, §3),
 `CROP_MODE` (`none`/`sliding_window`/`langsam`, §2), and `DECOMP_STRATEGY`
 (`per_tag`/`pooled`, §4) — any combination is valid. The **default** matrix (one
 strategy per template, matching each template's original design) is 3×3×2 seeds =
@@ -86,14 +86,14 @@ strategy, layer selection, and purity filtering are now the independent
 `TASK_PROMPTS[template]["ShortCaptioning"]` from `src/models/constants.py` — the
 key `JSONDataset` (used by steps 3/4) actually reads.
 
-| | `cgdl` | `non_contrastive` | `null` |
+| | `tgcl` | `non_contrastive` | `null` |
 |---|---|---|---|
 | Prompt sent to the VLM | `"Classify the image as either [concept] or No [concept] based on its content. Use exactly the word [concept] -- not a synonym -- in your answer. Return only the predicted label."` — `[concept]` substituted with the tag name per image | `"What are the objects in the image?"` — same for every image, tag-agnostic, open-ended | `""` — literally empty instruction |
 | `MAX_NEW_TOKENS` | 50 (default) | 50 (default) | 1 (forced by `run_ablation.py`; a single decoder forward pass) |
-| `HOOK_NAMES` (step 4) | `save_hidden_states_for_token_of_interest` — extract the hidden state at the position where the tag word (or "No `[concept]`") is generated; falls back to position 0 if it never appears, with a found/not-found mask saved alongside | Same as `cgdl` — the tag word can appear anywhere in the open caption, so the same extraction applies | `save_hidden_states_mean` — a single forward pass has nothing to disambiguate, mean-of-one-token is the same as the token itself |
+| `HOOK_NAMES` (step 4) | `save_hidden_states_for_token_of_interest` — extract the hidden state at the position where the tag word (or "No `[concept]`") is generated; falls back to position 0 if it never appears, with a found/not-found mask saved alongside | Same as `tgcl` — the tag word can appear anywhere in the open caption, so the same extraction applies | `save_hidden_states_mean` — a single forward pass has nothing to disambiguate, mean-of-one-token is the same as the token itself |
 | Token-of-interest sample filtering (`keep_only_token_of_interest`, `src/analysis/__init__.py`) | **Mandatory (always True)** — samples where the tag word was never found are dropped, not pooled in as if they were real matches | Mandatory, same reason | N/A — `null`'s files carry no `token_of_interest_mask` key (mean hook), so this is a no-op regardless of value |
 
-Both `cgdl` and `non_contrastive` used to differ here (mean-pool vs.
+Both `tgcl` and `non_contrastive` used to differ here (mean-pool vs.
 token-of-interest, and non_contrastive's filtering used to be disabled) — as of
 this revision they're treated identically: any template whose response can run
 several tokens gets the same precise per-tag-word extraction and the same
@@ -105,9 +105,9 @@ happens to end on, regardless of which template produced that response.
 
 Independent of `PROMPT_TEMPLATE` and `CROP_MODE` — any template/crop combination
 can use either strategy via the `DECOMP_STRATEGY` env var (`scripts/run_full_pipeline.py`,
-`PipelineConfig.decomp_strategy`). Defaults when not set explicitly: `cgdl` →
+`PipelineConfig.decomp_strategy`). Defaults when not set explicitly: `tgcl` →
 `per_tag`, `non_contrastive`/`null` → `pooled` (each template's original design;
-set `DECOMP_STRATEGY` explicitly to override, e.g. `cgdl`+`pooled` or
+set `DECOMP_STRATEGY` explicitly to override, e.g. `tgcl`+`pooled` or
 `non_contrastive`+`per_tag`).
 
 | | `per_tag` | `pooled` |
@@ -116,7 +116,7 @@ set `DECOMP_STRATEGY` explicitly to override, e.g. `cgdl`+`pooled` or
 | Per-tag logit-lens layer selection (step 3, `LOGIT_LENS_LAYER_SELECTION`) | Honored (if set in `.env`) — each tag can hook a different decoder layer, since each tag is decomposed independently, so mismatched layers across tags don't conflict | **Force-disabled** regardless of `.env` — every tag must use the same static `LAYER_PATH` (`model.language_model.norm`), since pooled features need one consistent module key across all tags |
 | `CLEAN_EXAMPLE_RATIO` purity filter | Applied as configured (0.2 by default) — meaningful, since each tag has its own positive/negative split to filter on, regardless of which template produced it | **Forced to 0.0** — pooled decomposition has no per-tag split to check a purity ratio against (every sample is pooled together unfiltered); every SNMF direction with ≥1 assigned sample is accepted instead |
 
-This is why, e.g., `cgdl`+`pooled` and `non_contrastive`+`per_tag` are both valid,
+This is why, e.g., `tgcl`+`pooled` and `non_contrastive`+`per_tag` are both valid,
 newly-supported combinations: the rules above apply the same way regardless of
 which template chose that strategy.
 
@@ -135,7 +135,7 @@ into one matrix before decomposition, so one empty tag doesn't zero out the whol
 matrix.
 
 **Validation status**: all 4 combinations newly enabled by this axis
-(`cgdl`+`pooled`, `non_contrastive`+`per_tag`, `null`+`per_tag`, `null`+`none`)
+(`tgcl`+`pooled`, `non_contrastive`+`per_tag`, `null`+`per_tag`, `null`+`none`)
 have been smoke-tested end-to-end (small `IMAGE_BUDGET`, one crop mode each) and
 confirmed working, including the fix above — not just implemented in theory. A
 full-scale run of the expanded matrix (§5) hadn't been launched as of this
@@ -167,18 +167,18 @@ The configs actually run, via `scripts/run_ablation.py --decomp-strategies {defa
 
 ```
 default (18 configs — one strategy per template, each template's own default):
-{cgdl, non_contrastive, null} × {none, sliding_window, langsam} × {42, 43} = 18
+{tgcl, non_contrastive, null} × {none, sliding_window, langsam} × {42, 43} = 18
 
 all (36 configs — every template at both strategies):
-{cgdl, non_contrastive, null} × {none, sliding_window, langsam} × {per_tag, pooled} × {42, 43} = 36
+{tgcl, non_contrastive, null} × {none, sliding_window, langsam} × {per_tag, pooled} × {42, 43} = 36
 ```
 
 `null` runs with all 3 crop modes (including `none`) for a uniform matrix — earlier
 versions of this ablation only ran `null` with `langsam`/`sliding_window`.
 Directory names only get a `_<decomp_strategy>` suffix when the strategy is NOT
-that template's default (e.g. `sliding_window_cgdl_seed42` stays unchanged for the
+that template's default (e.g. `sliding_window_tgcl_seed42` stays unchanged for the
 default `per_tag` run; the new pooled variant is
-`sliding_window_cgdl_pooled_seed42`) — so the 18 pre-existing default-strategy
+`sliding_window_tgcl_pooled_seed42`) — so the 18 pre-existing default-strategy
 directories keep their original names and are recognized as already complete.
 
 ## 6. Running a single method
@@ -202,11 +202,11 @@ export NUM_CONCEPT=-1
 export EXPL_PROMPT_MODE=mcq
 export EXPL_CHOICES="apple,banana,bird,cake,cat,cup,dog,donut,knife,orange"
 
-export PROMPT_TEMPLATE=cgdl          # or non_contrastive, or null
+export PROMPT_TEMPLATE=tgcl          # or non_contrastive, or null
 export CROP_MODE=sliding_window      # or none, or langsam
 export DECOMP_STRATEGY=per_tag       # or pooled -- omit to use this template's default (see §4)
 export SEED=42
-export OUTPUT_DIR=outputs/ablation_coco10/sliding_window_cgdl_seed42
+export OUTPUT_DIR=outputs/ablation_coco10/sliding_window_tgcl_seed42
 
 # only needed for PROMPT_TEMPLATE=null:
 # export MAX_NEW_TOKENS=1
@@ -411,14 +411,14 @@ Steps 6-7 of `run_full_pipeline.py` already run all of this automatically per
 config. The commands below are for re-running (or debugging) one evaluation
 script standalone — e.g. after tweaking a metric's implementation, without
 redoing the whole pipeline. All paths below assume a config directory like
-`outputs/ablation_coco10/sliding_window_cgdl_seed42/` — substitute your own
+`outputs/ablation_coco10/sliding_window_tgcl_seed42/` — substitute your own
 `OUTPUT_DIR`, `method` (decomposition method, default `snmf`), and `layer_path`.
 
 ```bash
 conda activate xlvlms
 cd /media/NVME_8TB/abka03/Projects/xl-vlms
 
-CFG=outputs/ablation_coco10/sliding_window_cgdl_seed42
+CFG=outputs/ablation_coco10/sliding_window_tgcl_seed42
 METHOD=snmf
 CONCEPT_PATH="$CFG/concept/$METHOD/combined_concept_${METHOD}_cr0.2_raw.pth"   # cr0.0 whenever DECOMP_STRATEGY=pooled (see §4)
 EXPLANATIONS="$CFG/explanations/$METHOD/vlm_explanations.json"

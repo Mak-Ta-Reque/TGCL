@@ -2,7 +2,7 @@
 """
 XL-VLMs Pipeline - Native Python Implementation
 
-Canonical single-config pipeline entry point -- see docs/cgdl_quickstart.md.
+Canonical single-config pipeline entry point -- see README.md.
 
 Steps:
 1) Dataset inference -> concepts map
@@ -124,7 +124,7 @@ class PipelineConfig:
             "PROMPT",
             "Identify every visible object, item, concept, and pattern in the image at the most fine-grained level. Output only single words in a strict comma-separated list, no sentences or explanations."
         )
-        self.prompt_template = self._get_str("PROMPT_TEMPLATE", "cgdl")
+        self.prompt_template = self._get_str("PROMPT_TEMPLATE", "tgcl")
         # Decomposition strategy is an independent axis from PROMPT_TEMPLATE --
         # any template can use either:
         #   per_tag: one SNMF call per tag (DECOMP_COMPONENTS concepts/tag),
@@ -137,12 +137,12 @@ class PipelineConfig:
         #            (DECOMP_COMPONENTS_GLOBAL concepts total), no purity filter
         #            (every direction with >=1 assigned sample is accepted).
         # Defaults preserve each template's original behavior when
-        # DECOMP_STRATEGY isn't set explicitly: cgdl -> per_tag,
+        # DECOMP_STRATEGY isn't set explicitly: tgcl -> per_tag,
         # non_contrastive/null -> pooled. Set DECOMP_STRATEGY=per_tag/pooled
-        # to override for any template (e.g. cgdl+pooled, non_contrastive+per_tag).
+        # to override for any template (e.g. tgcl+pooled, non_contrastive+per_tag).
         self.decomp_strategy = self._get_str(
             "DECOMP_STRATEGY",
-            "per_tag" if self.prompt_template == "cgdl" else "pooled",
+            "per_tag" if self.prompt_template == "tgcl" else "pooled",
         ).strip().lower()
         if self.decomp_strategy not in ("per_tag", "pooled"):
             raise ValueError(f"DECOMP_STRATEGY must be 'per_tag' or 'pooled', got {self.decomp_strategy!r}")
@@ -195,7 +195,7 @@ class PipelineConfig:
         # extracts the hidden state at the tag word itself wherever it occurs
         # in the response (falls back gracefully, with a found/not-found
         # mask, when the tag word never appears -- see
-        # extract_token_of_interest_states). cgdl's forced "X or No X" answer
+        # extract_token_of_interest_states). tgcl's forced "X or No X" answer
         # and non_contrastive's open caption both have a real tag word to find
         # this way; null's empty prompt + MAX_NEW_TOKENS=1 has no multi-token
         # response to disambiguate in the first place, so it stays on mean

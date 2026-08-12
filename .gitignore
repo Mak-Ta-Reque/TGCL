@@ -53,5 +53,10 @@ data/
 # Scratch space used for ad-hoc artifact-publishing builds
 .scratch/
 
+# Claude Code tool state (settings, worktrees, skills) -- local workflow
+# config, not project source. Re-add a specific file with a leading "!" if
+# something under here should be shared/tracked after all.
+.claude/
+
 # Accidentally-committed git-lfs client binary/docs (a tool, not project content)
 git-lfs-3.5.1/
